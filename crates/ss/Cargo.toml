@@ -1,0 +1,12 @@
+[package]
+name = "even_odd"
+version = "0.1.0"
+authors = ["themohal <farjadmohal@gmail.com>"]
+edition = "2018"
+repository = "https://github.com/imran82ali/firstwelcome"
+homepage = "https://github.com/imran82ali/firstwelcome"
+license = "MIT/Apache-2.0"
+readme = "README.md"
+description = "First Welcome Library "
+
+[dependencies]
