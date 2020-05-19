@@ -14,6 +14,8 @@ fn main() {
        // println!("can't access x here {:?}",x);//error value borrowed here after move
 
        let equal_to_y =move|z|z==x;
+       
     let y = vec![1,2,3,4];
     assert!(equal_to_y(y));
+
 }
