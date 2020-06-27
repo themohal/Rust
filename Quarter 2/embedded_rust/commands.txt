@@ -1,0 +1,29 @@
+//for building
+
+cargo build --target thumbv7em-none-eabihf
+
+
+//for reading header
+
+cargo readobj --target thumbv7em-none-eabihf --bin led-roulette -- -file-headers
+
+//for opening ocd channel change directory
+
+cd /tmp
+
+//run to establish connection to stm
+
+openocd -f interface/stlink-v2-1.cfg -f target/stm32f3x.cfg
+
+//to open gdb debugger shell
+
+gdb-multiarch -q target/thumbv7em-none-eabihf/debug/led-roulette
+
+//eastablish connection openocd and gdb write in gdb shell
+
+target remote :3333
+
+//flashing code in gdb shell write command
+
+load
+

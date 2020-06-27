@@ -1,0 +1,1 @@
+/home/farjad-ali/Rust/Quarter\ 2/embedded_rust/05-led-roulette/target/thumbv7em-none-eabihf/debug/led-roulette: /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/05-led-roulette/auxiliary/src/lib.rs /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/05-led-roulette/src/main.rs
