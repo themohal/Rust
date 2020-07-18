@@ -1,0 +1,1 @@
+/home/farjad-ali/Rust/Quarter\ 2/embedded_rust/06-hello-world/target/thumbv7em-none-eabihf/debug/hello-world: /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/06-hello-world/auxiliary/src/lib.rs /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/06-hello-world/src/main.rs

@@ -1,0 +1,3 @@
+cargo:rustc-link-search=/home/farjad-ali/Rust/Quarter 2/embedded_rust/06-hello-world/target/rls/thumbv7em-none-eabihf/debug/build/f3-8f2ce5a605ee1649/out
+cargo:rerun-if-changed=build.rs
+cargo:rerun-if-changed=memory.x

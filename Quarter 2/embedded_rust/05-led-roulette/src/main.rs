@@ -2,36 +2,21 @@
 #![no_main]
 #![no_std]
 
-use aux5::{entry,Delay,Leds,prelude::*};
+use aux5::{entry, prelude::*, Delay, Leds};
 
 #[entry]
 fn main() -> ! {
-    let (mut delay,mut leds) :(Delay,Leds) = aux5::init();
+    let (mut delay, mut leds): (Delay, Leds) = aux5::init();
 
-    let period = 500_u16;
-    // infinite loop; just so we don't leave this stack frame
+    let ms = 50_u8;
     loop {
+        for curr in 0..8 {
+            let next = (curr + 1) % 8;
 
-        leds[0].on();
-        leds[2].on();
-        leds[4].on();
-        leds[6].on();
-        delay.delay_ms(period);
-        leds[1].on();
-        leds[3].on();
-        leds[5].on();
-        leds[7].on(); 
-        delay.delay_ms(period);
-        leds[0].off();
-        leds[2].off();
-        leds[4].off();
-        leds[6].off();
-        delay.delay_ms(period);
-        leds[1].off();
-        leds[3].off();
-        leds[5].off();
-        leds[7].off();
-        delay.delay_ms(period);
-
+            leds[next].on();
+            delay.delay_ms(ms);
+            leds[curr].off();
+            delay.delay_ms(ms);
+        }
     }
 }

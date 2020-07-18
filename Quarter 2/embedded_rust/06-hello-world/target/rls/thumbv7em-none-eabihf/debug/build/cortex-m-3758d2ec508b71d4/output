@@ -1,0 +1,5 @@
+cargo:rustc-link-lib=static=cortex-m
+cargo:rustc-link-search=/home/farjad-ali/Rust/Quarter 2/embedded_rust/06-hello-world/target/rls/thumbv7em-none-eabihf/debug/build/cortex-m-3758d2ec508b71d4/out
+cargo:rustc-cfg=cortex_m
+cargo:rustc-cfg=armv7m
+cargo:rustc-cfg=has_fpu

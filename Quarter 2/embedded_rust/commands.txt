@@ -27,3 +27,27 @@ target remote :3333
 
 load
 
+//for hello world program
+
+create txt file in cd /tmp directory 
+
+ # itmdump terminal
+
+ # *nix
+ cd /tmp && touch itm.txt
+
+ # Windows
+ cd %TEMP% && type nul >> itm.txt
+
+ # both
+ itmdump -F -f itm.txt //this command will halt the terminal
+
+
+//to redirect input from mcu to host
+
+(gdb) # globally enable the ITM and redirect all output to itm.txt
+(gdb) monitor tpiu config internal itm.txt uart off 8000000
+
+(gdb) # enable the ITM port 0
+(gdb) monitor itm port 0 on
+
