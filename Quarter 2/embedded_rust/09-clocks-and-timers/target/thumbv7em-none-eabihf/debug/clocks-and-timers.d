@@ -1,0 +1,1 @@
+/home/farjad-ali/Rust/Quarter\ 2/embedded_rust/09-clocks-and-timers/target/thumbv7em-none-eabihf/debug/clocks-and-timers: /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/09-clocks-and-timers/auxiliary/src/lib.rs /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/09-clocks-and-timers/src/main.rs

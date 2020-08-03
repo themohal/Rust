@@ -6,5 +6,5 @@ monitor itm port 0 on
 load
 break DefaultHandler
 break HardFault
-break main.rs:45
+break main
 continue
