@@ -1,0 +1,2 @@
+cargo:rustc-cfg=armv7m
+cargo:rustc-cfg=has_fpu

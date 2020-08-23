@@ -1,0 +1,1 @@
+/home/farjad-ali/Rust/Quarter\ 2/embedded_rust/11-usart/target/thumbv7em-none-eabihf/release/usart: /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/11-usart/auxiliary/src/lib.rs /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/11-usart/src/main.rs

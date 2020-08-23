@@ -1,0 +1,1 @@
+{"rustc":5807094999684781751,"features":"[\"const-fn\", \"default\"]","target":7077261942879914497,"profile":14672114853574311971,"path":18274137349477491926,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"thumbv7em-none-eabihf/debug/.fingerprint/bare-metal-f5cc92caeaf6d59e/dep-lib-bare_metal-f5cc92caeaf6d59e"}}],"rustflags":[],"metadata":15978218900306750549}

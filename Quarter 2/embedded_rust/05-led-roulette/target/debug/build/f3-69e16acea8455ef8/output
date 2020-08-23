@@ -1,0 +1,3 @@
+cargo:rustc-link-search=/home/farjad-ali/Rust/Quarter 2/embedded_rust/05-led-roulette/target/debug/build/f3-69e16acea8455ef8/out
+cargo:rerun-if-changed=build.rs
+cargo:rerun-if-changed=memory.x

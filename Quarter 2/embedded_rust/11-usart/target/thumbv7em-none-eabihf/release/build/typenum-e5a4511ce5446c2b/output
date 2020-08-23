@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/farjad-ali/Rust/Quarter 2/embedded_rust/11-usart/target/thumbv7em-none-eabihf/release/build/typenum-e5a4511ce5446c2b/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/home/farjad-ali/Rust/Quarter 2/embedded_rust/11-usart/target/thumbv7em-none-eabihf/release/build/typenum-e5a4511ce5446c2b/out/op.rs
