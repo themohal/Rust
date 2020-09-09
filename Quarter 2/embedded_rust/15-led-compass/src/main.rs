@@ -11,10 +11,20 @@ use m::Float;
 
 #[entry]
 fn main() -> ! {
+    const XY_GAIN: f32 = 1100.; // LSB / G
+    const Z_GAIN: f32 = 980.; // LSB / G
     let (mut leds, mut lsm303dlhc, mut delay, mut itm) = aux15::init();
 
     loop {
-        let I16x3 { x, y, .. } = lsm303dlhc.mag().unwrap();
+        let I16x3 { x, y, z } = lsm303dlhc.mag().unwrap();
+            //for magnitude
+        let x = f32::from(x) / XY_GAIN;
+        let y = f32::from(y) / XY_GAIN;
+        let z = f32::from(z) / Z_GAIN;
+
+        let mag = (x * x + y * y + z * z).sqrt();
+
+        iprintln!(&mut itm.stim[0], "Magnitude: {} mG", mag * 1_000.);
 
         let theta = (y as f32).atan2(x as f32); // in radians
         iprintln!(&mut itm.stim[0],"Value of Theta: {:?}",theta);
