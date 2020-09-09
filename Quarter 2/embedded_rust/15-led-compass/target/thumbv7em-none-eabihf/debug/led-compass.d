@@ -1,0 +1,1 @@
+/home/farjad-ali/Rust/Quarter\ 2/embedded_rust/15-led-compass/target/thumbv7em-none-eabihf/debug/led-compass: /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/15-led-compass/auxiliary/src/lib.rs /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/15-led-compass/src/main.rs

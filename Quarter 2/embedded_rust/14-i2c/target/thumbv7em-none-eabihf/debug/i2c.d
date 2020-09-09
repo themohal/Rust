@@ -1,0 +1,1 @@
+/home/farjad-ali/Rust/Quarter\ 2/embedded_rust/14-i2c/target/thumbv7em-none-eabihf/debug/i2c: /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/14-i2c/auxiliary/src/lib.rs /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/14-i2c/src/main.rs

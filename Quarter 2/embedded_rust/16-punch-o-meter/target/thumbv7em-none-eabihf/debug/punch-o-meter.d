@@ -1,0 +1,1 @@
+/home/farjad-ali/Rust/Quarter\ 2/embedded_rust/16-punch-o-meter/target/thumbv7em-none-eabihf/debug/punch-o-meter: /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/16-punch-o-meter/auxiliary/src/lib.rs /home/farjad-ali/Rust/Quarter\ 2/embedded_rust/16-punch-o-meter/src/main.rs
