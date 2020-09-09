@@ -17,24 +17,35 @@ fn main() -> ! {
         let I16x3 { x, y, .. } = lsm303dlhc.mag().unwrap();
 
         let theta = (y as f32).atan2(x as f32); // in radians
+        iprintln!(&mut itm.stim[0],"Value of Theta: {:?}",theta);
+
 //direction is set to point to qibala direction at home 
         let dir = if theta < -7. * PI / 8. {
+            iprintln!(&mut itm.stim[0],"West Led");
             Direction::West
         } else if theta < -5. * PI / 8. {
+            iprintln!(&mut itm.stim[0],"SouthWest Led");
             Direction::Southwest
         } else if theta < -3. * PI / 8. {
+            iprintln!(&mut itm.stim[0],"South Led");
             Direction::South
         } else if theta < -PI / 8. {
+            iprintln!(&mut itm.stim[0],"SouthEast Led");
             Direction::Southeast
         } else if theta < PI / 8. {
+            iprintln!(&mut itm.stim[0],"East Led");
             Direction::East
         } else if theta < 3. * PI / 8. {
+            iprintln!(&mut itm.stim[0],"NorthEast Led");
             Direction::Northeast
         } else if theta < 5. * PI / 8. {
+            iprintln!(&mut itm.stim[0],"North Led");
             Direction::North
         } else if theta < 7. * PI / 8. {
+            iprintln!(&mut itm.stim[0],"NorthWest Led");
             Direction::Northwest
         } else {
+            iprintln!(&mut itm.stim[0],"North Led");
             Direction::North
         };
 
