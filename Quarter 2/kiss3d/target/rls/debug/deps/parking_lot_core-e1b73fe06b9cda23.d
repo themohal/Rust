@@ -1,0 +1,10 @@
+/home/farjad-ali/Rust/Quarter 2/kiss3d/target/rls/debug/deps/parking_lot_core-e1b73fe06b9cda23.rmeta: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/thread_parker/unix.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/parking_lot.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/spinwait.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/util.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/word_lock.rs
+
+/home/farjad-ali/Rust/Quarter 2/kiss3d/target/rls/debug/deps/parking_lot_core-e1b73fe06b9cda23.d: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/thread_parker/unix.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/parking_lot.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/spinwait.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/util.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/word_lock.rs
+
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/lib.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/thread_parker/unix.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/parking_lot.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/spinwait.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/util.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/parking_lot_core-0.4.0/src/word_lock.rs:

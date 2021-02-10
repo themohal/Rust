@@ -1,0 +1,12 @@
+/home/farjad-ali/Rust/Quarter 2/kiss3d/target/rls/debug/deps/tiff-d536e6149a0e1071.rmeta: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/decoder/mod.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/decoder/ifd.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/decoder/stream.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/encoder/mod.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/encoder/colortype.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/encoder/writer.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/error.rs
+
+/home/farjad-ali/Rust/Quarter 2/kiss3d/target/rls/debug/deps/tiff-d536e6149a0e1071.d: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/decoder/mod.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/decoder/ifd.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/decoder/stream.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/encoder/mod.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/encoder/colortype.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/encoder/writer.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/error.rs
+
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/lib.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/decoder/mod.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/decoder/ifd.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/decoder/stream.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/encoder/mod.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/encoder/colortype.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/encoder/writer.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/tiff-0.3.1/src/error.rs:

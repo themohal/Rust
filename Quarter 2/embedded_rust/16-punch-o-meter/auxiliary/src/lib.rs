@@ -8,14 +8,14 @@ extern crate panic_itm; // panic handler
 pub use cortex_m::{asm::bkpt, iprint, iprintln, peripheral::ITM};
 pub use cortex_m_rt::entry;
 pub use f3::{
-    hal::{delay::Delay, prelude, time::MonoTimer},
+    hal::{delay::Delay, prelude},
     lsm303dlhc::{I16x3, Sensitivity},
     Lsm303dlhc,
 };
 
 use f3::hal::{i2c::I2c, prelude::*, stm32f30x};
 
-pub fn init() -> (Lsm303dlhc, Delay, MonoTimer, ITM) {
+pub fn init() -> (Lsm303dlhc, Delay, ITM) {
     let cp = cortex_m::Peripherals::take().unwrap();
     let dp = stm32f30x::Peripherals::take().unwrap();
 
@@ -39,7 +39,7 @@ pub fn init() -> (Lsm303dlhc, Delay, MonoTimer, ITM) {
     let lsm303dlhc = Lsm303dlhc::new(i2c).unwrap();
 
     let delay = Delay::new(cp.SYST, clocks);
-    let mono_timer = MonoTimer::new(cp.DWT, clocks);
+    // let mono_timer = MonoTimer::new(cp.DWT, clocks);
 
-    (lsm303dlhc, delay, mono_timer, cp.ITM)
+    (lsm303dlhc, delay, cp.ITM)
 }

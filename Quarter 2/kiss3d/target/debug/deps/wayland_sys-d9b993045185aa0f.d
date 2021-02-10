@@ -1,0 +1,11 @@
+/home/farjad-ali/Rust/Quarter 2/kiss3d/target/debug/deps/wayland_sys-d9b993045185aa0f.rmeta: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/common.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/client.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/egl.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/cursor.rs
+
+/home/farjad-ali/Rust/Quarter 2/kiss3d/target/debug/deps/libwayland_sys-d9b993045185aa0f.rlib: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/common.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/client.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/egl.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/cursor.rs
+
+/home/farjad-ali/Rust/Quarter 2/kiss3d/target/debug/deps/wayland_sys-d9b993045185aa0f.d: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/common.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/client.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/egl.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/cursor.rs
+
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/lib.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/common.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/client.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/egl.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/wayland-sys-0.21.13/src/cursor.rs:
