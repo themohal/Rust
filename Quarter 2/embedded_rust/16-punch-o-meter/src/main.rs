@@ -7,7 +7,7 @@ use aux16::{entry, iprint, iprintln, prelude::*, I16x3, Sensitivity};
 
 #[entry]
 fn main() -> ! {
-    let (mut lsm303dlhc, mut delay, mut itm) = aux16::init();
+    let (mut lsm303dlhc, mut delay, _mono_timer, mut itm) = aux16::init();
 
     // extend sensing range to `[-12g, +12g]`
     lsm303dlhc.set_accel_sensitivity(Sensitivity::G12).unwrap();

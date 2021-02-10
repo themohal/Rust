@@ -1,2 +1,0 @@
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/farjad-ali/Rust/Quarter 2/kiss3d/target/rls/debug/build/typenum-54cf2c9546c781c7/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_OP=/home/farjad-ali/Rust/Quarter 2/kiss3d/target/rls/debug/build/typenum-54cf2c9546c781c7/out/op.rs
