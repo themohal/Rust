@@ -1,0 +1,10 @@
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/rls/debug/deps/futures_channel-60c089b65f042d3e.rmeta: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/lock.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/mpsc/mod.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/mpsc/queue.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/mpsc/sink_impl.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/oneshot.rs
+
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/rls/debug/deps/futures_channel-60c089b65f042d3e.d: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/lock.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/mpsc/mod.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/mpsc/queue.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/mpsc/sink_impl.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/oneshot.rs
+
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/lib.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/lock.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/mpsc/mod.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/mpsc/queue.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/mpsc/sink_impl.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.12/src/oneshot.rs:

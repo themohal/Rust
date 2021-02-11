@@ -1,0 +1,11 @@
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/debug/deps/futures_lite-74be6a374635049e.rmeta: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/future.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/prelude.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/stream.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/io.rs
+
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/debug/deps/libfutures_lite-74be6a374635049e.rlib: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/future.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/prelude.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/stream.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/io.rs
+
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/debug/deps/futures_lite-74be6a374635049e.d: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/future.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/prelude.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/stream.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/io.rs
+
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/lib.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/future.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/prelude.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/stream.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-lite-1.11.3/src/io.rs:

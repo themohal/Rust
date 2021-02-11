@@ -1,0 +1,10 @@
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/debug/deps/concurrent_queue-324e9f5d188245f6.rmeta: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/bounded.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/single.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/unbounded.rs
+
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/debug/deps/libconcurrent_queue-324e9f5d188245f6.rlib: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/bounded.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/single.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/unbounded.rs
+
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/debug/deps/concurrent_queue-324e9f5d188245f6.d: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/bounded.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/single.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/unbounded.rs
+
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/lib.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/bounded.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/single.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/concurrent-queue-1.2.2/src/unbounded.rs:

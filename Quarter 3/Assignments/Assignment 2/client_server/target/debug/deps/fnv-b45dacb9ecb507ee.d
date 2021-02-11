@@ -1,0 +1,7 @@
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/debug/deps/fnv-b45dacb9ecb507ee.rmeta: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/fnv-1.0.7/lib.rs
+
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/debug/deps/libfnv-b45dacb9ecb507ee.rlib: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/fnv-1.0.7/lib.rs
+
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/debug/deps/fnv-b45dacb9ecb507ee.d: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/fnv-1.0.7/lib.rs
+
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/fnv-1.0.7/lib.rs:

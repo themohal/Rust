@@ -1,0 +1,12 @@
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/rls/debug/deps/log-ad20d9cdf740d1f6.rmeta: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/macros.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/serde.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/mod.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/error.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/key.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/source.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/value.rs
+
+/home/farjad-ali/Rust/Quarter 3/Assignments/Assignment 2/client_server/target/rls/debug/deps/log-ad20d9cdf740d1f6.d: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/lib.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/macros.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/serde.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/mod.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/error.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/key.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/source.rs /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/value.rs
+
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/lib.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/macros.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/serde.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/mod.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/error.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/key.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/source.rs:
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/src/kv/value.rs:
