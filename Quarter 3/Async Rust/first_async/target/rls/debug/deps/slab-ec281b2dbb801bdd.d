@@ -1,0 +1,5 @@
+/home/farjad-ali/Rust/Quarter 3/Async Rust/first_async/target/rls/debug/deps/slab-ec281b2dbb801bdd.rmeta: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.4.2/src/lib.rs
+
+/home/farjad-ali/Rust/Quarter 3/Async Rust/first_async/target/rls/debug/deps/slab-ec281b2dbb801bdd.d: /home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.4.2/src/lib.rs
+
+/home/farjad-ali/.cargo/registry/src/github.com-1ecc6299db9ec823/slab-0.4.2/src/lib.rs:
