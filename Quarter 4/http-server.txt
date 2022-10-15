@@ -1,0 +1,2 @@
+http-server -o --cors [file name]
+http://172.17.41.183:8080/dialog_flow.html

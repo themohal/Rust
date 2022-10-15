@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/ -->
+<html lang="en-US" class=" js csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<meta name="robots" content="max-image-preview:large">
+<script src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/sdk.js.download" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/sdk.js(1).download"></script><script async="" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/analytics.js.download"></script><script type="text/javascript">            function apbct_attach_event_handler__backend(elem, event, callback){                if(typeof window.addEventListener === "function") elem.addEventListener(event, callback);                else                                              elem.attachEvent(event, callback);            }            apbct_attach_event_handler__backend(window, 'load', function(){                ctSetCookie('ct_checkjs', '2030593764' );            });</script>
+
+<title>How To Configure WiFi on Raspberry Pi: Step By Step Tutorial - Latest Open Tech From Seeed</title>
+<meta name="description" content="Configuring the WiFi is probably the first thing you&#39;ll do on your Raspberry Pi. Here are three methods to meet all your WiFi configuration needs!">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How To Configure WiFi on Raspberry Pi: Step By Step Tutorial - Latest Open Tech From Seeed">
+<meta property="og:description" content="Configuring the WiFi is probably the first thing you&#39;ll do on your Raspberry Pi. Here are three methods to meet all your WiFi configuration needs!">
+<meta property="og:url" content="https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/">
+<meta property="og:site_name" content="Latest Open Tech From Seeed">
+<meta property="article:published_time" content="2021-01-25T08:27:02+00:00">
+<meta property="article:modified_time" content="2021-09-29T08:24:52+00:00">
+<meta property="og:image" content="https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/harrison-broadbent-hSHNPyND_dU-unsplash-scaled.jpg">
+<meta property="og:image:width" content="2560">
+<meta property="og:image:height" content="1441">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.seeedstudio.com/blog/#website","url":"https://www.seeedstudio.com/blog/","name":"Latest open tech from seeed studio","description":"Emerging IoT, AI and Autonomous Applications on the Edge","potentialAction":[{"@type":"SearchAction","target":"https://www.seeedstudio.com/blog/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/#primaryimage","inLanguage":"en-US","url":"https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/harrison-broadbent-hSHNPyND_dU-unsplash-scaled.jpg","width":2560,"height":1441},{"@type":"WebPage","@id":"https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/#webpage","url":"https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/","name":"How To Configure WiFi on Raspberry Pi: Step By Step Tutorial - Latest Open Tech From Seeed","isPartOf":{"@id":"https://www.seeedstudio.com/blog/#website"},"primaryImageOfPage":{"@id":"https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/#primaryimage"},"datePublished":"2021-01-25T08:27:02+00:00","dateModified":"2021-09-29T08:24:52+00:00","author":{"@id":"https://www.seeedstudio.com/blog/#/schema/person/61e29862da8741ee517eacd92f4cd094"},"description":"Configuring the WiFi is probably the first thing you'll do on your Raspberry Pi. Here are three methods to meet all your WiFi configuration needs!","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/"]}]},{"@type":["Person"],"@id":"https://www.seeedstudio.com/blog/#/schema/person/61e29862da8741ee517eacd92f4cd094","name":"Jonathan Tan","image":{"@type":"ImageObject","@id":"https://www.seeedstudio.com/blog/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/d8dd1a4a7882386e8818e110c9322897?s=96&r=g","caption":"Jonathan Tan"}}]}</script>
+
+<link rel="dns-prefetch" href="https://www.seeedstudio.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Latest Open Tech From Seeed » Feed" href="https://www.seeedstudio.com/blog/feed/">
+<link rel="alternate" type="application/rss+xml" title="Latest Open Tech From Seeed » Comments Feed" href="https://www.seeedstudio.com/blog/comments/feed/">
+<link rel="alternate" type="text/calendar" title="Latest Open Tech From Seeed » iCal Feed" href="https://www.seeedstudio.com/blog/events/?ical=1">
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.seeedstudio.com\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.3"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="blockspare-blocks-fontawesome-front-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/all.css" type="text/css" media="all">
+<link rel="stylesheet" id="blockspare-frontend-block-style-css-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/blocks.style.build.css" type="text/css" media="all">
+<link rel="stylesheet" id="slick-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/slick.css" type="text/css" media="all">
+<link rel="stylesheet" id="latest-posts-block-fontawesome-front-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/all(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="latest-posts-block-frontend-block-style-css-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/blocks.style.build(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="magic-content-box-blocks-fontawesome-front-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/all(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="magic-content-box-frontend-block-style-css-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/blocks.style.build(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="tribe-common-skeleton-style-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/common-skeleton.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tribe-tooltip-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/tooltip.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="SFSImainCss-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/sfsi-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-polls-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/polls-css.css" type="text/css" media="all">
+<style id="wp-polls-inline-css" type="text/css">
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: 8px;
+	line-height: 10px;
+	height: 10px;
+	background-image: url('https://www.seeedstudio.com/blog/wp-content/plugins/wp-polls/images/default_gradient/pollbg.gif');
+	border: 1px solid #c8c8c8;
+}
+
+</style>
+<link rel="stylesheet" id="awpa-wp-post-author-style-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/awpa-frontend-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="featured-news-google-fonts-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="magazine-7-style-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="featured-news-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-v5-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/fontawesome-all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sidr-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/jquery.sidr.dark.css" type="text/css" media="all">
+<link rel="stylesheet" id="magnific-popup-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/magnific-popup.css" type="text/css" media="all">
+<link rel="stylesheet" id="magazine-7-google-fonts-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="mc4wp-form-themes-css" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/form-themes.min.css" type="text/css" media="all">
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/jquery-3.5.1.min.js.download" id="jquery-core-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/waypoints.min.js.download" id="waypoint-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/jquery.counterup.min.js.download" id="countup-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/jquery-migrate-3.3.0.min.js.download" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="ct_public-js-extra">
+/* <![CDATA[ */
+var ctPublic = {"_ajax_nonce":"cfca0afa5d","_rest_nonce":"b9f839a950","_ajax_url":"\/blog\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/www.seeedstudio.com\/blog\/wp-json\/","_apbct_ajax_url":"https:\/\/www.seeedstudio.com\/blog\/wp-content\/plugins\/cleantalk-spam-protect\/lib\/Cleantalk\/ApbctWP\/Ajax.php","data__set_cookies":"1","data__set_cookies__alt_sessions_type":"0","pixel__setting":"0","pixel__enabled":"","pixel__url":null,"data__email_check_before_post":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/apbct-public.min.js.download" id="ct_public-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/cleantalk-modal.min.js.download" id="cleantalk-modal-js"></script>
+<script type="text/javascript" id="ct_nocache-js-extra">
+/* <![CDATA[ */
+var ctNocache = {"ajaxurl":"\/blog\/wp-admin\/admin-ajax.php","info_flag":"","set_cookies_flag":"1","blog_home":"https:\/\/www.seeedstudio.com\/blog\/"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/cleantalk_nocache.min.js.download" id="ct_nocache-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/awpa-frontend-scripts.js.download" id="awpa-custom-bg-scripts-js"></script>
+<link rel="https://api.w.org/" href="https://www.seeedstudio.com/blog/wp-json/"><link rel="alternate" type="application/json" href="https://www.seeedstudio.com/blog/wp-json/wp/v2/posts/39915"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.seeedstudio.com/blog/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.seeedstudio.com/blog/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.7.3">
+<link rel="shortlink" href="https://www.seeedstudio.com/blog/?p=39915">
+<link rel="alternate" type="application/json+oembed" href="https://www.seeedstudio.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.seeedstudio.com%2Fblog%2F2021%2F01%2F25%2Fthree-methods-to-configure-raspberry-pi-wifi%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.seeedstudio.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.seeedstudio.com%2Fblog%2F2021%2F01%2F25%2Fthree-methods-to-configure-raspberry-pi-wifi%2F&amp;format=xml">
+
+<style type="text/css">
+/* Add your CSS code here. */ 
+/*OpenSans-ExtraBold*/
+@font-face {
+  font-family: 'OpenSans-SemiBold';
+  src: url('https://statics3.seeedstudio.com/assets/fonts/OpenSans-Semibold.ttf');
+}
+
+.sfsiplus_footerLnk {
+  display: none;
+}
+.bazzar.page-wrapper {
+  display: none;
+}
+.page-footer {
+  position: relative;
+  margin-top: auto;
+  background: #fff;
+}
+.page-wrapper .page-footer .footer-container {
+  padding: 0;
+}
+.footer-links-cols {
+  padding: 40px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer-links .title {
+  font-family: 'OpenSans-SemiBold';
+  font-size: 16px;
+  line-height: 22px;
+  color: #00936d;
+  letter-spacing: 0;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.page-footer ol, .page-footer ul, .page-footer li {
+  list-style: none;
+  margin: 0;
+}
+.page-footer .footer-links a,
+.page-footer .footer-links a:hover {
+  font-size: 14px !important;
+  color: #6d6f70 !important;
+  line-height: 22px !important;
+  font-family: OpenSans;
+  letter-spacing: 0;
+  text-align: left;
+  font-weight: 500;
+}
+.page-wrapper .page-footer .footer-container .footer-links-cols .links-col3 {
+  border-right: 1px solid #f1f1f1;
+}
+.page-wrapper .page-footer .footer-container .footer-links-cols > div {
+  min-width: 260px;
+  padding: 0 20px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+.page-wrapper .page-footer .footer-container .footer-links-cols .links-col4 {
+  min-width: 340px;
+}
+.page-wrapper .page-footer .section-newsletter .subscribe .newsletter .short_text_one {
+  font-family: 'OpenSans-SemiBold';
+  font-size: 16px;
+  line-height: 22px;
+  color: #00936d;
+  letter-spacing: 0;
+  text-align: right;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  float: none;
+  text-transform: none;
+}
+.page-wrapper .page-footer .section-newsletter .subscribe .newsletter .control {
+  display: block;
+  width: 100%;
+}
+.block.newsletter .form.subscribe {
+  display: table;
+  width: 100%;
+  width: 300px;
+}
+.page-wrapper .page-footer .section-newsletter .subscribe .newsletter .control .content-subscribe {
+  height: 42px;
+  background: #fff;
+  position: relative;
+}
+.page-footer .footer-static-container .footer-static .footer-links .block.newsletter .actions {
+  display: block;
+  width: auto;
+}
+#mc_embed_signup_scroll {
+  position: relative;
+}
+.page-wrapper .page-footer .section-newsletter .subscribe .newsletter .control .content-subscribe input.email {
+  background: #fff;
+  border: 1px solid #b5b7b6;
+  height: 42px;
+  padding-left: 10px;
+  display: block;
+  width: 100%;
+  font-family: 'OpenSans-SemiBold';
+  font-size: 14px;
+}
+.page-wrapper .page-footer .section-newsletter .subscribe .newsletter .control .content-subscribe .button {
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  text-transform: initial;
+  font-family: 'OpenSans-SemiBold';
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 0;
+  padding: 0;
+  text-align: center;
+  background: #00936d;
+  border: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 0;
+}
+.page-wrapper .page-footer .section-newsletter .subscribe .newsletter .short_text_two {
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  text-align: left;
+}
+.page-wrapper .page-footer .section-newsletter .subscribe .newsletter .short_text_two a i {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  background: #d8d8d8;
+  color: #fff;
+}
+.page-wrapper .page-footer .section-newsletter .subscribe .newsletter .short_text_two a i.fa-facebook {
+  background: #3b599c;
+}
+.page-wrapper .page-footer .section-newsletter .subscribe .newsletter .short_text_two a i.fa-twitter {
+  background: #00b1ea;
+}
+.page-wrapper .page-footer .section-newsletter .subscribe .newsletter .short_text_two a i.fa-instagram {
+  background: #205a83;
+}
+.page-wrapper .page-footer .footer-bottom {
+  display: block;
+  margin: 0;
+  height: 50px;
+  background: #f8f8f8;
+  padding: 0 20px;
+}
+.content-in-box, .footer-in-box {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-wrapper .page-footer .footer-bottom .footer-bottom-inner .bottom-info {
+  text-align: center;
+}
+.page-wrapper .page-footer .footer-bottom .footer-bottom-inner .copyright {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+.page-wrapper .page-footer .footer-bottom .footer-bottom-inner .copyright span {
+  font-size: 14px;
+  line-height: 50px;
+  color: #9c9c9c;
+  letter-spacing: 0;
+  text-align: left;
+  font-family: OpenSans;
+}
+.page-wrapper .page-footer .bottom-info {
+  font-size: 0;
+}
+.page-wrapper .page-footer .footer-bottom .footer-bottom-inner .policy {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 50px;
+  padding: 0;
+}
+.page-wrapper .page-footer .footer-bottom .footer-bottom-inner .payment-logo {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+}
+.page-footer .fl {
+  float: left;
+}
+.page-wrapper .page-footer .footer-bottom .footer-bottom-inner .policy a {
+  font-family: OpenSans;
+  font-size: 14px;
+  line-height: 50px;
+  color: #9c9c9c;
+  letter-spacing: 0;
+  text-align: left;
+  font-weight: 500;
+}
+.page-footer .switcher {
+  margin-right: 10px;
+}
+.page-footer .switcher .options {
+  display: inline-block;
+  position: relative;
+}
+@media (max-width: 1200px) {
+  .page-wrapper .page-footer .footer-bottom {
+    height: auto;
+  }
+  .footer-bottom .content-in-box,
+  .footer-static-container .content-in-box,
+  .footer-bottom .content-in-box .slider-box,
+  .footer-static-container .content-in-box .slider-box {
+    width: 100% !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  .page-wrapper .page-footer .footer-container .footer-links-cols > div {
+    width: auto;
+    min-width: auto;
+    max-width: 250px;
+  }
+}
+@media (max-width: 769px) {
+  .page-wrapper .page-footer .footer-container .footer-links-cols > div {
+    display: block;
+    width: 100%;
+    min-width: auto;
+    margin-top: 20px;
+  }
+  .page-wrapper .page-footer .footer-container .footer-links-cols .links-col3 {
+    border-right: 1px solid #fff;
+  }
+  .page-wrapper .page-footer .footer-bottom .footer-bottom-inner .copyright {
+    display: block;
+    text-align: center;
+  }
+  .page-wrapper .page-footer .footer-bottom {
+    padding:0;
+  }
+  .page-wrapper .page-footer .footer-bottom .footer-bottom-inner .payment-logo {
+    padding: 0 10px;
+  }
+}
+</style>
+
+
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><style id="theia-sticky-sidebar-stylesheet-TSS">.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head><body class="post-template-default single single-post postid-39915 single-format-standard tribe-js align-content-left elementor-default elementor-kit-30129 sfsi_2.49"><div class="page-wrapper bazzar">
+<link rel="stylesheet" as="style" media="all" href="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/font-awesome.min.css">
+<footer class="page-footer" id="bazzar-footer">
+<div class="footer-container">
+<div class="footer-static-container">
+<div class="content-in-box clearfix">
+<div class="slider-box">
+<div class="footer-box">
+<div class="footer-static">
+<div class="">
+<div class="footer-links-cols clearfix">
+<div class="links-col1">
+<div class="footer-links">
+<p class="title" style="font-weight: 400; color: green; font-size: 16px;">Company
+</p>
+<ul>
+<li>
+<a href="https://www.seeedstudio.com/blog/forum-2/about-us/">About seeed
+</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/distributors.html">Distributors
+</a>
+ </li>
+<li>
+<a href="https://www.lagou.com/gongsi/35919.html">Join us
+</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/contacts">Contact
+</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2020/04/22/seeed-in-the-news">Press
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="links-col2">
+<div class="footer-links">
+<p class="title" style="font-weight: 400; color: green; font-size: 16px;">Help Center
+</p>
+<ul>
+<li>
+<a href="https://www.seeedstudio.com/get_help/HowToGetHelp">How to Get Help
+</a>
+</li>
+<li>
+<a href="http://support.seeedstudio.com/knowledgebase">FAQ
+</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/get_help/TechnicalSupport">Technical Support
+</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/get_help/ShippingOrder"> Shipping &amp;
+Order
+</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/get_help/ReturnsRefund">Warranty &amp;
+Returns
+</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/get_help/PaymentInformation">Payment Information
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="links-col3">
+<div class="footer-links">
+<p class="title" style="font-weight: 400; color: green; font-size: 16px;">Community
+</p>
+<ul>
+<li>
+<a href="https://forum.seeedstudio.com/" target="_blank" rel="noopener">Forum
+</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog" target="_blank" rel="noopener">News
+</a>
+</li>
+<li>
+<a href="https://project.seeedstudio.com/" target="_blank" rel="noopener">Project Hub
+</a>
+</li>
+<li>
+<a href="https://www.xfactory.io/" target="_blank" rel="noopener">x.factory in Shenzhen
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="links-col4">
+<div class="footer-links">
+<div class="section-newsletter">
+<div class="block newsletter">
+<div class="content">
+<div class="form subscribe">
+<div class="field newsletter">
+<div class="short_text short_text_one">
+Stay Tuned
+</div>
+ <div class="control">
+<div class="content-subscribe">
+<div id="mc_embed_signup" class="actions">
+<form action="https://seeedstudio.us11.list-manage.com/subscribe/post?u=0c272aa6642cc5d058579205f&amp;id=4b071a49e3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+<div id="mc_embed_signup_scroll">
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Email Address" required="">
+<button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button subscribe">
+<span class="fa fa-angle-right">
+</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="short_text short_text_two clearfix">
+<a rel="nofollow noopener" href="https://www.facebook.com/seeedstudiosz/" target="_blank">
+<i class="fa fa-facebook">
+</i>
+</a>
+<a rel="nofollow noopener" href="https://twitter.com/seeedstudio" target="_blank">
+<i class="fa fa-twitter">
+</i>
+</a>
+<a rel="nofollow noopener" href="https://www.linkedin.com/company/seeedstudio" target="_blank">
+<i class="fa fa-linkedin" style="background:rgb(22, 128, 185);color:#fff">
+</i>
+</a>
+<a rel="nofollow noopener" href="https://instagram.com/seeedstudio" target="_blank">
+<i class="fa fa-instagram">
+</i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="content-in-box clearfix">
+<div class="slider-box">
+<div class="footer-box">
+<div class="footer-bottom-inner">
+<div class="bottom-info">
+<div class="copyright">
+<span>© 2008-
+<span id="year">2021
+</span> Seeed Technology Co.,Ltd. All rights reserved.
+</span>
+</div>
+<div class="policy">
+<div class="fl ">
+<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备13058720号
+</a>
+</div>
+<div class="fl site-map" style="margin: 0 0 0 50px;">
+<a title="Site Map" href="https://www.seeedstudio.com/sitemap.html/" target="_blank" rel="nofollow noopener">Site Map
+</a>
+</div>
+<div class="fl policy">
+<a href="https://www.seeedstudio.com/privacy_policy.html/" rel="nofollow">Privacy Policy
+ </a>
+</div>
+</div>
+<div class="payment-logo">
+<p style="overflow: hidden; line-height: 50px; margin: 0 0 0 0;">
+<span class="payment-icon item paypal" style="margin: 0 10px 0 0; float: none; display: inline-block; vertical-align: middle; background-repeat: no-repeat; width: 58px; height: 20px; background: url(&#39;https://media-cdn.seeedstudio.com/media/wysiwyg/payment_logo_sprites.png&#39;) -162px -5px;">
+</span>
+<span class="payment-icon item visa" style="margin: 0 10px 0 0; float: none; display: inline-block; vertical-align: middle; background-repeat: no-repeat; width: 45px; height: 20px; background: url(&#39;https://media-cdn.seeedstudio.com/media/wysiwyg/payment_logo_sprites.png&#39;) -41px -5px;">
+</span>
+<span class="payment-icon item mastercard" style="margin: 0 10px 0 0; float: none; display: inline-block; vertical-align: middle; background-repeat: no-repeat; width: 26px; height: 20px; background: url(&#39;https://media-cdn.seeedstudio.com/media/wysiwyg/payment_logo_sprites.png&#39;) -5px -5px;">
+</span>
+<span class="payment-icon item macfee" style="margin: 0 0 0 0; float: none; display: inline-block; vertical-align: middle; background-repeat: no-repeat; margin-right: 0; width: 56px; height: 20px; background: url(&#39;https://media-cdn.seeedstudio.com/media/wysiwyg/payment_logo_sprites.png&#39;) -96px -5px;">
+</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+      .footer-container.checkout-footer-container{
+        display:block!important;
+      }
+      .footer-bottom.checkout-footer-bottom .content-in-box{
+        width:100%;
+      }
+      .footer-bottom.checkout-footer-bottom .content-in-box .slider-box{
+        width:1400px;
+      }
+      .footer-bottom.checkout-footer-bottom .bottom-info .policy .footer-list li{
+        margin: 0 0 0 0!important;
+        padding:0 10px;
+      }
+    </style>
+</footer>
+</div>
+
+
+<script type="text/javascript">
+/* Default comment here */ 
+jQuery(document).ready(function( $ ){
+  // Your code in here
+  var isFooter = false;
+  if (window.location.href.indexOf('/edge-computing') != -1 || window.location.href.indexOf('/indoor-positioning-system') != -1) {
+    isFooter = true;
+    var iFrameBox = jQuery(window.parent.document).find("body").find('.page-wrapper').find('.header-container');
+    if (iFrameBox && iFrameBox.length > 0) {
+      isFooter = false;
+      jQuery(window.parent.document).find("body").find('.page-wrapper').find('.header-container').hide(100)
+    }
+  }
+  if (window.location.host.indexOf('solution.seeed.cc') != -1) {
+    isFooter = true;
+  }
+  if (isFooter) {
+    jQuery(jQuery('.elementor')[0]).append(jQuery(".page-wrapper.bazzar"))
+    jQuery(".elementor .page-wrapper.bazzar").show(100)
+    jQuery(".elementor .page-wrapper.bazzar #year").text(new Date().getFullYear())
+  }
+});
+</script>
+
+
+<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'G-7LY3E3H14Q', 'auto');
+			ga('send', 'pageview');
+		</script>
+<meta name="specificfeeds-verification-code-TTlmd1VuNFVUSHhmTGJTdWwzUDR0eXh6TmFPQlZXUEwvWHNrbENTeUpJS1ZTUlpWaWpoc0hDMW9rVUJxQ0M1M2YxY1pWdU82SGpzRDdTbkJHakZSL2NuUG0rb05RRlpVQ0lyMUd4NFBxVG1GRStFOVVYZGlrbFljL3ZCVmJ3NGR8VFBmaWJiRjFIMlF0OXlYM0dFcTl0ci94NmwzOE9Nalh1amZKVkdwL1QvND0=" content="dkNLHkazxpX8zWBP7ulF">
+<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://www.seeedstudio.com/blog"><link rel="https://theeventscalendar.com/" href="https://www.seeedstudio.com/blog/wp-json/tribe/events/v1/"><meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1"><script>
+/*! iFrame Resizer (iframeSizer.contentWindow.min.js) */
+!function(c){if("undefined"!=typeof window){var i=!0,o=10,r="",a=0,u="",s=null,d="",l=!1,f={resize:1,click:1},m=128,h=!0,g=1,n="bodyOffset",p=n,v=!0,y="",w={},b=32,T=null,E=!1,O=!1,S="[iFrameSizer]",M=S.length,I="",N={max:1,min:1,bodyScroll:1,documentElementScroll:1},A="child",C=!0,z=window.parent,k="*",R=0,x=!1,e=null,L=16,F=1,t="scroll",P=t,D=window,j=function(){re("onMessage function not defined")},q=function(){},H=function(){},W={height:function(){return re("Custom height calculation function not defined"),document.documentElement.offsetHeight},width:function(){return re("Custom width calculation function not defined"),document.body.scrollWidth}},B={},J=!1;try{var U=Object.create({},{passive:{get:function(){J=!0}}});window.addEventListener("test",ee,U),window.removeEventListener("test",ee,U)}catch(e){}var V,X,Y,K,Q,G,Z={bodyOffset:function(){return document.body.offsetHeight+pe("marginTop")+pe("marginBottom")},offset:function(){return Z.bodyOffset()},bodyScroll:function(){return document.body.scrollHeight},custom:function(){return W.height()},documentElementOffset:function(){return document.documentElement.offsetHeight},documentElementScroll:function(){return document.documentElement.scrollHeight},max:function(){return Math.max.apply(null,ye(Z))},min:function(){return Math.min.apply(null,ye(Z))},grow:function(){return Z.max()},lowestElement:function(){return Math.max(Z.bodyOffset()||Z.documentElementOffset(),ve("bottom",be()))},taggedElement:function(){return we("bottom","data-iframe-height")}},$={bodyScroll:function(){return document.body.scrollWidth},bodyOffset:function(){return document.body.offsetWidth},custom:function(){return W.width()},documentElementScroll:function(){return document.documentElement.scrollWidth},documentElementOffset:function(){return document.documentElement.offsetWidth},scroll:function(){return Math.max($.bodyScroll(),$.documentElementScroll())},max:function(){return Math.max.apply(null,ye($))},min:function(){return Math.min.apply(null,ye($))},rightMostElement:function(){return ve("right",be())},taggedElement:function(){return we("right","data-iframe-width")}},_=(V=Te,Q=null,G=0,function(){var e=Date.now(),t=L-(e-(G=G||e));return X=this,Y=arguments,t<=0||L<t?(Q&&(clearTimeout(Q),Q=null),G=e,K=V.apply(X,Y),Q||(X=Y=null)):Q=Q||setTimeout(Ee,t),K});te(window,"message",function(t){var n={init:function(){y=t.data,z=t.source,ae(),h=!1,setTimeout(function(){v=!1},m)},reset:function(){v?ie("Page reset ignored by init"):(ie("Page size reset by host page"),Me("resetPage"))},resize:function(){Oe("resizeParent","Parent window requested size check")},moveToAnchor:function(){w.findTarget(i())},inPageLink:function(){this.moveToAnchor()},pageInfo:function(){var e=i();ie("PageInfoFromParent called from parent: "+e),H(JSON.parse(e)),ie(" --")},message:function(){var e=i();ie("onMessage called from parent: "+e),j(JSON.parse(e)),ie(" --")}};function o(){return t.data.split("]")[1].split(":")[0]}function i(){return t.data.substr(t.data.indexOf(":")+1)}function r(){return t.data.split(":")[2]in{true:1,false:1}}function e(){var e=o();e in n?n[e]():("undefined"==typeof module||!module.exports)&&"iFrameResize"in window||"jQuery"in window&&"iFrameResize"in window.jQuery.prototype||r()||re("Unexpected message ("+t.data+")")}S===(""+t.data).substr(0,M)&&(!1===h?e():r()?n.init():ie('Ignored message of type "'+o()+'". Received before initialization.'))}),te(window,"readystatechange",Ae),Ae()}function ee(){}function te(e,t,n,o){e.addEventListener(t,n,!!J&&(o||{}))}function ne(e){return e.charAt(0).toUpperCase()+e.slice(1)}function oe(e){return S+"["+I+"] "+e}function ie(e){E&&"object"==typeof window.console&&console.log(oe(e))}function re(e){"object"==typeof window.console&&console.warn(oe(e))}function ae(){function e(e){return"true"===e}var t;function n(e){Ne(0,0,e.type,e.screenY+":"+e.screenX)}function o(e,t){ie("Add event listener: "+t),te(window.document,e,n)}t=y.substr(M).split(":"),I=t[0],a=c!==t[1]?Number(t[1]):a,l=c!==t[2]?e(t[2]):l,E=c!==t[3]?e(t[3]):E,b=c!==t[4]?Number(t[4]):b,i=c!==t[6]?e(t[6]):i,u=t[7],p=c!==t[8]?t[8]:p,r=t[9],d=t[10],R=c!==t[11]?Number(t[11]):R,w.enable=c!==t[12]&&e(t[12]),A=c!==t[13]?t[13]:A,P=c!==t[14]?t[14]:P,O=c!==t[15]?Boolean(t[15]):O,ie("Initialising iFrame ("+window.location.href+")"),function(){function e(e,t){return"function"==typeof e&&(ie("Setup custom "+t+"CalcMethod"),W[t]=e,e="custom"),e}"iFrameResizer"in window&&Object===window.iFrameResizer.constructor&&(function(){var e=window.iFrameResizer;ie("Reading data from page: "+JSON.stringify(e)),Object.keys(e).forEach(ue,e),j="onMessage"in e?e.onMessage:j,q="onReady"in e?e.onReady:q,k="targetOrigin"in e?e.targetOrigin:k,p="heightCalculationMethod"in e?e.heightCalculationMethod:p,P="widthCalculationMethod"in e?e.widthCalculationMethod:P}(),p=e(p,"height"),P=e(P,"width"));ie("TargetOrigin for parent set to: "+k)}(),function(){c===u&&(u=a+"px");ce("margin",function(e,t){-1!==t.indexOf("-")&&(re("Negative CSS value ignored for "+e),t="");return t}("margin",u))}(),ce("background",r),ce("padding",d),(t=document.createElement("div")).style.clear="both",t.style.display="block",t.style.height="0",document.body.appendChild(t),fe(),me(),document.documentElement.style.height="",document.body.style.height="",ie('HTML & body height set to "auto"'),ie("Enable public methods"),D.parentIFrame={autoResize:function(e){return!0===e&&!1===i?(i=!0,he()):!1===e&&!0===i&&(i=!1,de("remove"),null!==s&&s.disconnect(),clearInterval(T)),Ne(0,0,"autoResize",JSON.stringify(i)),i},close:function(){Ne(0,0,"close")},getId:function(){return I},getPageInfo:function(e){"function"==typeof e?(H=e,Ne(0,0,"pageInfo")):(H=function(){},Ne(0,0,"pageInfoStop"))},moveToAnchor:function(e){w.findTarget(e)},reset:function(){Ie("parentIFrame.reset")},scrollTo:function(e,t){Ne(t,e,"scrollTo")},scrollToOffset:function(e,t){Ne(t,e,"scrollToOffset")},sendMessage:function(e,t){Ne(0,0,"message",JSON.stringify(e),t)},setHeightCalculationMethod:function(e){p=e,fe()},setWidthCalculationMethod:function(e){P=e,me()},setTargetOrigin:function(e){ie("Set targetOrigin: "+e),k=e},size:function(e,t){Oe("size","parentIFrame.size("+((e||"")+(t?","+t:""))+")",e,t)}},!0===O&&(o("mouseenter","Mouse Enter"),o("mouseleave","Mouse Leave")),he(),w=function(){function i(e){var t=e.getBoundingClientRect(),e={x:window.pageXOffset!==c?window.pageXOffset:document.documentElement.scrollLeft,y:window.pageYOffset!==c?window.pageYOffset:document.documentElement.scrollTop};return{x:parseInt(t.left,10)+parseInt(e.x,10),y:parseInt(t.top,10)+parseInt(e.y,10)}}function n(e){var t,n=e.split("#")[1]||e,e=decodeURIComponent(n),o=document.getElementById(e)||document.getElementsByName(e)[0];c!==o?(t=i(t=o),ie("Moving to in page link (#"+n+") at x: "+t.x+" y: "+t.y),Ne(t.y,t.x,"scrollToOffset")):(ie("In page link (#"+n+") not found in iFrame, so sending to parent"),Ne(0,0,"inPageLink","#"+n))}function e(){var e=window.location.hash,t=window.location.href;""!==e&&"#"!==e&&n(t)}function t(){Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'),function(e){"#"!==e.getAttribute("href")&&te(e,"click",function(e){e.preventDefault(),n(this.getAttribute("href"))})})}function o(){Array.prototype.forEach&&document.querySelectorAll?(ie("Setting up location.hash handlers"),t(),te(window,"hashchange",e),setTimeout(e,m)):re("In page linking not fully supported in this browser! (See README.md for IE8 workaround)")}w.enable?o():ie("In page linking not enabled");return{findTarget:n}}(),Oe("init","Init message from host page"),q()}function ue(e){var t=e.split("Callback");2===t.length&&(this[t="on"+t[0].charAt(0).toUpperCase()+t[0].slice(1)]=this[e],delete this[e],re("Deprecated: '"+e+"' has been renamed '"+t+"'. The old method will be removed in the next major version."))}function ce(e,t){c!==t&&""!==t&&"null"!==t&&ie("Body "+e+' set to "'+(document.body.style[e]=t)+'"')}function se(n){var e={add:function(e){function t(){Oe(n.eventName,n.eventType)}B[e]=t,te(window,e,t,{passive:!0})},remove:function(e){var t,n=B[e];delete B[e],t=window,e=e,n=n,t.removeEventListener(e,n,!1)}};n.eventNames&&Array.prototype.map?(n.eventName=n.eventNames[0],n.eventNames.map(e[n.method])):e[n.method](n.eventName),ie(ne(n.method)+" event listener: "+n.eventType)}function de(e){se({method:e,eventType:"Animation Start",eventNames:["animationstart","webkitAnimationStart"]}),se({method:e,eventType:"Animation Iteration",eventNames:["animationiteration","webkitAnimationIteration"]}),se({method:e,eventType:"Animation End",eventNames:["animationend","webkitAnimationEnd"]}),se({method:e,eventType:"Input",eventName:"input"}),se({method:e,eventType:"Mouse Up",eventName:"mouseup"}),se({method:e,eventType:"Mouse Down",eventName:"mousedown"}),se({method:e,eventType:"Orientation Change",eventName:"orientationchange"}),se({method:e,eventType:"Print",eventName:["afterprint","beforeprint"]}),se({method:e,eventType:"Ready State Change",eventName:"readystatechange"}),se({method:e,eventType:"Touch Start",eventName:"touchstart"}),se({method:e,eventType:"Touch End",eventName:"touchend"}),se({method:e,eventType:"Touch Cancel",eventName:"touchcancel"}),se({method:e,eventType:"Transition Start",eventNames:["transitionstart","webkitTransitionStart","MSTransitionStart","oTransitionStart","otransitionstart"]}),se({method:e,eventType:"Transition Iteration",eventNames:["transitioniteration","webkitTransitionIteration","MSTransitionIteration","oTransitionIteration","otransitioniteration"]}),se({method:e,eventType:"Transition End",eventNames:["transitionend","webkitTransitionEnd","MSTransitionEnd","oTransitionEnd","otransitionend"]}),"child"===A&&se({method:e,eventType:"IFrame Resized",eventName:"resize"})}function le(e,t,n,o){return t!==e&&(e in n||(re(e+" is not a valid option for "+o+"CalculationMethod."),e=t),ie(o+' calculation method set to "'+e+'"')),e}function fe(){p=le(p,n,Z,"height")}function me(){P=le(P,t,$,"width")}function he(){var e;!0===i?(de("add"),e=b<0,window.MutationObserver||window.WebKitMutationObserver?e?ge():s=function(){function t(e){function t(e){!1===e.complete&&(ie("Attach listeners to "+e.src),e.addEventListener("load",i,!1),e.addEventListener("error",r,!1),u.push(e))}"attributes"===e.type&&"src"===e.attributeName?t(e.target):"childList"===e.type&&Array.prototype.forEach.call(e.target.querySelectorAll("img"),t)}function o(e){ie("Remove listeners from "+e.src),e.removeEventListener("load",i,!1),e.removeEventListener("error",r,!1),e=e,u.splice(u.indexOf(e),1)}function n(e,t,n){o(e.target),Oe(t,n+": "+e.target.src)}function i(e){n(e,"imageLoad","Image loaded")}function r(e){n(e,"imageLoadFailed","Image load failed")}function a(e){Oe("mutationObserver","mutationObserver: "+e[0].target+" "+e[0].type),e.forEach(t)}var u=[],c=window.MutationObserver||window.WebKitMutationObserver,s=function(){var e=document.querySelector("body");return s=new c(a),ie("Create body MutationObserver"),s.observe(e,{attributes:!0,attributeOldValue:!1,characterData:!0,characterDataOldValue:!1,childList:!0,subtree:!0}),s}();return{disconnect:function(){"disconnect"in s&&(ie("Disconnect body MutationObserver"),s.disconnect(),u.forEach(o))}}}():(ie("MutationObserver not supported in this browser!"),ge())):ie("Auto Resize disabled")}function ge(){0!==b&&(ie("setInterval: "+b+"ms"),T=setInterval(function(){Oe("interval","setInterval: "+b)},Math.abs(b)))}function pe(e,t){var n=0;return t=t||document.body,n=null!==(n=document.defaultView.getComputedStyle(t,null))?n[e]:0,parseInt(n,o)}function ve(e,t){for(var n,o=t.length,i=0,r=ne(e),a=Date.now(),u=0;u<o;u++)i<(n=t[u].getBoundingClientRect()[e]+pe("margin"+r,t[u]))&&(i=n);return a=Date.now()-a,ie("Parsed "+o+" HTML elements"),ie("Element position calculated in "+a+"ms"),L/2<(a=a)&&ie("Event throttle increased to "+(L=2*a)+"ms"),i}function ye(e){return[e.bodyOffset(),e.bodyScroll(),e.documentElementOffset(),e.documentElementScroll()]}function we(e,t){var n=document.querySelectorAll("["+t+"]");return 0===n.length&&(re("No tagged elements ("+t+") found on page"),document.querySelectorAll("body *")),ve(e,n)}function be(){return document.querySelectorAll("body *")}function Te(e,t,n,o){function i(){e in{init:1,interval:1,size:1}||!(p in N||l&&P in N)?e in{interval:1}||ie("No change in size detected"):Ie(t)}var r,a;function u(e,t){return!(Math.abs(e-t)<=R)}r=c!==n?n:Z[p](),a=c!==o?o:$[P](),u(g,r)||l&&u(F,a)||"init"===e?(Se(),Ne(g=r,F=a,e)):i()}function Ee(){G=Date.now(),Q=null,K=V.apply(X,Y),Q||(X=Y=null)}function Oe(e,t,n,o){x&&e in f?ie("Trigger event cancelled: "+e):(e in{reset:1,resetPage:1,init:1}||ie("Trigger event: "+t),("init"===e?Te:_)(e,t,n,o))}function Se(){x||(x=!0,ie("Trigger event lock on")),clearTimeout(e),e=setTimeout(function(){x=!1,ie("Trigger event lock off"),ie("--")},m)}function Me(e){g=Z[p](),F=$[P](),Ne(g,F,e)}function Ie(e){var t=p;p=n,ie("Reset trigger event: "+e),Se(),Me("reset"),p=t}function Ne(e,t,n,o,i){var r;!0===C&&(c===i?i=k:ie("Message targetOrigin: "+i),ie("Sending message to host page ("+(r=I+":"+(e+":"+t)+":"+n+(c!==o?":"+o:""))+")"),z.postMessage(S+r,i))}function Ae(){"loading"!==document.readyState&&window.parent.postMessage("[iFrameResizerChild]Ready","*")}}();
+//# sourceMappingURL=iframeResizer.contentWindow.map
+</script>
+<style type="text/css">
+                        .site-title a,
+            .site-description {
+                color: #d6d6d6;
+            }
+
+            .site-branding .site-title {
+                font-size: 60px;
+            }
+
+            @media only screen and (max-width: 640px) {
+                .site-branding .site-title {
+                    font-size: 60px;
+
+                }
+
+            @media only screen and (max-width: 640px) {
+                .site-branding .site-title {
+                    font-size: 50px;
+
+                }
+
+            
+
+        </style>
+<meta name="twitter:partner" content="tfwp"><link rel="icon" href="https://www.seeedstudio.com/blog/wp-content/uploads/2021/09/cropped-seeedLOGO-2%E7%9A%84%E5%89%AF%E6%9C%AC-32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.seeedstudio.com/blog/wp-content/uploads/2021/09/cropped-seeedLOGO-2%E7%9A%84%E5%89%AF%E6%9C%AC-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://www.seeedstudio.com/blog/wp-content/uploads/2021/09/cropped-seeedLOGO-2%E7%9A%84%E5%89%AF%E6%9C%AC-180x180.png">
+<meta name="msapplication-TileImage" content="https://www.seeedstudio.com/blog/wp-content/uploads/2021/09/cropped-seeedLOGO-2的副本-270x270.png">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="How To Configure WiFi on Raspberry Pi: Step By Step Tutorial"><meta name="twitter:description" content="One of the first things you’ll want to do with your Raspberry Pi is definitely…"><meta name="twitter:image" content="https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/harrison-broadbent-hSHNPyND_dU-unsplash-scaled.jpg">
+
+
+<div id="page" class="site">
+<a class="skip-link screen-reader-text" href="https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/#content">Skip to content</a>
+<div class="magazine-7-woocommerce-store-notice">
+</div>
+<div class="top-masthead">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-8 device-center">
+<div class="top-navigation"><ul id="top-menu" class="menu"><li id="menu-item-48325" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48325"><a href="https://www.seeedstudio.com/blog/pa/">SERVICES</a></li>
+<li id="menu-item-48322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48322"><a href="https://www.seeedstudio.com/blog/customization-service/">CUSTOMIZATION</a></li>
+<li id="menu-item-48323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48323"><a href="https://www.seeedstudio.com/blog/manufacturing-service/">MANUFACTURING</a></li>
+<li id="menu-item-48324" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48324"><a href="https://www.seeedstudio.com/blog/distribution-service/">DISTRIBUTION</a></li>
+</ul></div> </div>
+<div class="col-xs-12 col-sm-12 col-md-4 pull-right">
+<div class="social-navigation"><ul id="social-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48325"><a href="https://www.seeedstudio.com/blog/pa/"><span class="screen-reader-text">SERVICES</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48322"><a href="https://www.seeedstudio.com/blog/customization-service/"><span class="screen-reader-text">CUSTOMIZATION</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48323"><a href="https://www.seeedstudio.com/blog/manufacturing-service/"><span class="screen-reader-text">MANUFACTURING</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48324"><a href="https://www.seeedstudio.com/blog/distribution-service/"><span class="screen-reader-text">DISTRIBUTION</span></a></li>
+</ul></div> </div>
+</div>
+</div>
+</div> 
+<header id="masthead" class="site-header nav-affix">
+<div class="masthead-banner data-bg" data-background="https://blog.seeedstudio.com/wp-content/uploads/2020/03/cropped-AboutUs16.png" style="background-image: url(&quot;https://blog.seeedstudio.com/wp-content/uploads/2020/03/cropped-AboutUs16.png&quot;);">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="site-branding">
+<p class="site-title font-family-1">
+<a href="https://www.seeedstudio.com/blog/" rel="home">Latest Open Tech From Seeed</a>
+</p>
+<p class="site-description">Emerging IoT, AI and Autonomous Applications on the Edge</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav id="site-navigation" class="main-navigation">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="navigation-container">
+<span class="offcanvas">
+<a href="https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/#offcanvasCollapse" class="offcanvas-nav">
+<div class="offcanvas-menu">
+<span class="mbtn-top"></span>
+<span class="mbtn-mid"></span>
+<span class="mbtn-bot"></span>
+</div>
+</a>
+</span>
+<div class="cart-search">
+<span class="af-search-click icon-search">
+<i class="fa fa-search"></i>
+</span>
+</div>
+<span class="toggle-menu" aria-controls="primary-menu" aria-expanded="false">
+<span class="screen-reader-text">Primary Menu</span>
+<i class="ham"></i>
+</span>
+<div class="menu main-menu"><ul id="primary-menu" class="menu menu-desktop"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48325"><a href="https://www.seeedstudio.com/blog/pa/">SERVICES</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48322"><a href="https://www.seeedstudio.com/blog/customization-service/">CUSTOMIZATION</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48323"><a href="https://www.seeedstudio.com/blog/manufacturing-service/">MANUFACTURING</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48324"><a href="https://www.seeedstudio.com/blog/distribution-service/">DISTRIBUTION</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div id="af-search-wrap">
+<div class="af-search-box table-block">
+<div class="table-block-child v-center text-center">
+<form role="search" method="get" class="search-form" action="https://www.seeedstudio.com/blog/">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+</label>
+<input type="submit" class="search-submit" value="Search">
+</form> </div>
+</div>
+<div class="af-search-close af-search-click">
+<span></span>
+<span></span>
+</div>
+</div>
+<div id="content" class="site-content">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div id="primary" class="content-area">
+<main id="main" class="site-main">
+<article id="post-39915" class="post-39915 post type-post status-publish format-standard has-post-thumbnail hentry category-guide category-raspberry-pi category-technical-updates tag-configure-wifi-on-raspberry-pi tag-raspberry-pi-4 tag-raspberry-pi-imager tag-raspberry-pi-os tag-raspberry-pi-wifi tag-raspberry-pi-zero-wifi tag-wifi tag-wpa_supplicant">
+<div class="entry-content-wrap">
+<header class="entry-header">
+<div class="header-details-wrapper">
+<div class="entry-header-details">
+<div class="figure-categories figure-categories-bg">
+<ul class="cat-links"><li class="meta-category">
+<a class="magazine-7-categories category-color-1" href="https://www.seeedstudio.com/blog/category/guide/" alt="View all posts in Guide">
+Guide
+</a>
+</li><li class="meta-category">
+<a class="magazine-7-categories category-color-1" href="https://www.seeedstudio.com/blog/category/topics/raspberry-pi/" alt="View all posts in Raspberry Pi">
+Raspberry Pi
+</a>
+</li><li class="meta-category">
+<a class="magazine-7-categories category-color-1" href="https://www.seeedstudio.com/blog/category/technical-updates/" alt="View all posts in Technical Updates">
+Technical Updates
+</a>
+</li></ul> </div>
+<h1 class="entry-title">How To Configure WiFi on Raspberry Pi: Step By Step Tutorial</h1>
+<span class="author-links">
+<span class="item-metadata posts-author">
+<span class="">By</span>
+<a href="https://www.seeedstudio.com/blog/author/jonathan-tan/">
+Jonathan Tan </a>
+</span>
+<span class="item-metadata posts-date">
+9 months ago </span>
+</span>
+</div>
+</div>
+</header>
+<div class="entry-content">
+<p>One of the first things you’ll want to do with your <a href="https://www.seeedstudio.com/Raspberry-pi-c-1010.html">Raspberry Pi</a> is definitely to configure the WiFi.</p>
+<p>Today, we’ll show you three ways to configure WiFi on your Raspberry Pi with both Raspberry Pi OS desktop and server. We’ll also cover how to do it on a headless Raspberry Pi!</p>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<figure class="wp-block-image size-large"><img loading="lazy" width="1030" height="580" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/harrison-broadbent-hSHNPyND_dU-unsplash-1030x580.jpg" alt="" class="wp-image-41564" srcset="https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/harrison-broadbent-hSHNPyND_dU-unsplash-1030x580.jpg 1030w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/harrison-broadbent-hSHNPyND_dU-unsplash-300x169.jpg 300w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/harrison-broadbent-hSHNPyND_dU-unsplash-768x432.jpg 768w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/harrison-broadbent-hSHNPyND_dU-unsplash-1536x864.jpg 1536w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/harrison-broadbent-hSHNPyND_dU-unsplash-2048x1152.jpg 2048w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/harrison-broadbent-hSHNPyND_dU-unsplash-1024x576.jpg 1024w" sizes="(max-width: 1030px) 100vw, 1030px"><figcaption><em>Photo by&nbsp;<a href="https://unsplash.com/@harrisonbroadbent?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Harrison Broadbent</a>&nbsp;on&nbsp;<a>Unsplash</a></em></figcaption></figure>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<hr class="wp-block-separator">
+<h2><strong>Wired Ethernet Connection</strong></h2>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>To set up a wired internet connection, simply connect your Raspberry Pi to the back of your network router with an <a href="https://www.anixter.com/en_au/resources/literature/techbriefs/what-is-an-rj45-connector.html">ethernet or RJ45 cable</a>. Once plugged in, you should observe the network LED blinking on your Raspberry Pi.</p>
+<p>In most cases, your wired internet connection will now be up and ready for use, provided that your router has DHCP enabled. DHCP stands for Dynamic Host Configuration Protocol, and basically assigns IP addresses to devices that connect to your router.</p>
+<p>To enable DHCP, access your home router’s management console with another computer that has already been connected. You can typically do this by entering your router’s IP address into the address bar of any internet browser.</p>
+<p>For more details, Computer Hope has a free and detailed guide <a href="https://www.computerhope.com/issues/ch001062.htm">here</a>.</p>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<hr class="wp-block-separator">
+<h2><strong>Wireless Connection – WiFi</strong> Hardware</h2>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>To set up a WiFi connection, we will first need a WiFi module for our Raspberry Pi.&nbsp; Fortunately, all Raspberry Pi models from the <a href="https://www.seeedstudio.com/Raspberry-Pi-3-Model-B--p-3037.html">Raspberry Pi 3 Model B</a> (2016) and later ship with on-board WiFi. If you have an older model on hand, or if your on-board WiFi module is not functioning, you will need to use an external USB WiFi adapter.</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img loading="lazy" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/51EHgMzWUfL._AC_SL1000_.jpg" alt="" width="202" height="161"><figcaption>Source: <a href="https://www.amazon.com/LOTEKOO-150Mbps-Adapter-Wireless-Raspberry/dp/B06Y2HKT75">Amazon</a></figcaption></figure></div>
+<p>When choosing a WiFi adapter, ensure that there is driver support. For example, WiFi adapters with the RTL8192cu chipset will work readily since there is Raspberry Pi OS support built in.</p>
+<p>Another consideration is the power draw. WiFi can require a lot of power, especially if a heavy amount of data is being transmitted. For older Raspberry Pi in particular, you may require an external power supply like a powered USB hub to power the WiFi adapter.</p>
+<p>For more details on selecting a suitable USB WiFi adapter, you can read <a href="https://elinux.org/RPi_USB_Wi-Fi_Adapters">this page on eLinux.org</a>. They also have a list of compatible WiFi adapters for the Raspberry Pi!</p>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<hr class="wp-block-separator">
+<h2>[Updated Mar 2021] The Only Method You Need to Set Up Raspberry Pi WiFi!</h2>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>With a new update to the Raspberry Pi Imager, it’s become easier than ever to set up your Raspberry Pi’s WiFi connection, regardless of if you’re going for a headless setup or not. Let’s get started!</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p><strong>Step 1: </strong>Install the latest version of the Raspberry Pi Imager for your operating system <a href="https://www.raspberrypi.org/software/">here</a>.</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p><strong>Step 2:</strong> Open the Raspberry Pi Imager. You should be greeted with the same screen as always.</p>
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/Screenshot-2021-03-22-at-11.49.41-AM.png" alt="" class="wp-image-41572" width="600" srcset="https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/Screenshot-2021-03-22-at-11.49.41-AM.png 792w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/Screenshot-2021-03-22-at-11.49.41-AM-300x212.png 300w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/Screenshot-2021-03-22-at-11.49.41-AM-768x543.png 768w" sizes="(max-width: 792px) 100vw, 792px"></figure></div>
+<p><strong>Step 3:</strong> Press <strong>Ctrl + Shift + x</strong> to open the advanced menu (<strong>CMD + Shift + x</strong> for Mac OSX).</p>
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/Screenshot-2021-03-22-at-11.51.42-AM.png" alt="" class="wp-image-41573" width="600" srcset="https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/Screenshot-2021-03-22-at-11.51.42-AM.png 792w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/Screenshot-2021-03-22-at-11.51.42-AM-300x212.png 300w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/Screenshot-2021-03-22-at-11.51.42-AM-768x543.png 768w" sizes="(max-width: 792px) 100vw, 792px"></figure></div>
+<p><strong>Step 4: </strong>Scroll down to<strong> Configure wifi</strong>, check the box and enter your WiFi credentials.</p>
+<p><em><strong>Note:</strong> Be sure to change your Wifi country according to your <a href="https://www.iban.com/country-codes">country code</a>!</em></p>
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/Screenshot-2021-03-22-at-11.52.29-AM.png" alt="" class="wp-image-41574" width="600" srcset="https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/Screenshot-2021-03-22-at-11.52.29-AM.png 792w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/Screenshot-2021-03-22-at-11.52.29-AM-300x212.png 300w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/Screenshot-2021-03-22-at-11.52.29-AM-768x543.png 768w" sizes="(max-width: 792px) 100vw, 792px"></figure></div>
+<p><strong>Step 5:</strong> Click <strong>SAVE</strong> and flash your OS to your microSD card for your Raspberry Pi! That’s it!</p>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>There are also other settings in the <strong>Advanced options</strong> menu that you can explore. For example, you can turn on <strong>SSH</strong> for easier headless installations and even configure the hostname of your Raspberry Pi!</p>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<hr class="wp-block-separator">
+<h2>Other Methods to Set Up Raspberry Pi Wi-Fi</h2>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>The methods shared in the following sections are still valid and will work for setting up the Wi-Fi on your Raspberry Pi. However, I recommend you follow the latest method as you’ll find it much easier!</p>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<h3>Method 1: <strong>Configure WiFi with Raspberry Pi OS GUI</strong></h3>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>For users running Raspberry Pi OS Desktop on their Raspberry Pi, you can simply use the provided GUI to set up your WiFi connection. This works just as you’d expect it to with your other laptops or smartphones.</p>
+<div class="wp-block-image"><figure class="aligncenter"><img src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/wifi2.png" alt=""><figcaption>Source: <a href="https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md">RaspberryPi.org</a></figcaption></figure></div>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<h3>Method 2: <strong>Configure WiFi from Command Line with Raspi-Config</strong></h3>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>If you are running a server distribution of Raspberry Pi OS without a GUI, you will have to use Raspi-Config instead. This method works in Raspberry Pi OS Desktop as well.</p>
+<p>Raspi-Config is a console based application used to configure various settings on the Raspberry Pi. It can be used for network configuration, setting up remote access, boot options etc.</p>
+<p>To open Raspi-Config n the command line, type the command:</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<pre class="wp-block-code"><code>sudo raspi-config</code></pre>
+<div style="height:5px" aria-hidden="true" class="wp-block-spacer"></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="642" height="288" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/raspi-config-on-Raspbian-Stretch-20181113-with-Network-Options-selected-1.jpg" alt="" class="wp-image-39923" srcset="https://www.seeedstudio.com/blog/wp-content/uploads/2021/01/raspi-config-on-Raspbian-Stretch-20181113-with-Network-Options-selected-1.jpg 642w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/01/raspi-config-on-Raspbian-Stretch-20181113-with-Network-Options-selected-1-300x135.jpg 300w" sizes="(max-width: 642px) 100vw, 642px"><figcaption>Source: <a href="https://www.techcoil.com/blog/how-to-connect-your-raspberry-pi-to-a-wifi-network-with-raspi-config-in-raspbian-stretch/">TechCoil</a></figcaption></figure></div>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>Using the arrow keys on your keyboard, navigate to “Network Options” and press Enter.</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="643" height="291" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/raspi-config-on-Raspbian-Stretch-20181113-with-Wi-fi-selected-1.png" alt="" class="wp-image-39925" srcset="https://www.seeedstudio.com/blog/wp-content/uploads/2021/01/raspi-config-on-Raspbian-Stretch-20181113-with-Wi-fi-selected-1.png 643w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/01/raspi-config-on-Raspbian-Stretch-20181113-with-Wi-fi-selected-1-300x136.png 300w" sizes="(max-width: 643px) 100vw, 643px"><figcaption>Source: <a href="https://www.techcoil.com/blog/how-to-connect-your-raspberry-pi-to-a-wifi-network-with-raspi-config-in-raspbian-stretch/">TechCoil</a></figcaption></figure></div>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>Select Wi-fi, then follow the on-screen instructions to enter your network’s SSID and password. When you’re done, select “Finish” on the main menu to close Raspi-Config.</p>
+<p>Finally, reboot the Raspberry Pi to apply the settings we’ve just changed. Your WiFi connection should then be good to go!</p>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<hr class="wp-block-separator">
+<h2><strong>Configuring WiFi on a Headless Raspberry Pi</strong></h2>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>A headless Raspberry Pi is one that we would like to run without a monitor, keyboard, or mouse. As you can imagine, it won’t be as straightforward to apply the methods we’ve covered so far.</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<h3><strong>Enable SSH (Secure Shell)</strong></h3>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>For this section, we will first want to enable SSH on our Raspberry Pi. This is something that you’ll want to do if you’re running your raspberry pi headless anyway.</p>
+<p>With SSH, you can use an internet connection to remotely run terminal commands on the Raspberry Pi from your primary computer through an internet connection.</p>
+<p>To enable SSH on a headless Raspberry Pi, simply place a file named “ssh”, without any extension, onto the boot partition of the SD card from another computer. This will tell Raspberry Pi to enable SSH when booting. The content of the file does not matter.</p>
+<p>Note: Do not connect your Raspberry Pi directly to a public network if you have not yet set up secure passwords for all users. Your device may be compromised by hackers.</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<h3><strong>Method 1: Enable WiFi Via Ethernet Cable</strong></h3>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>This method involves using an ethernet connection to utilise SSH for setting up our WiFi.</p>
+<p>Once our ethernet connection is established via wired connection with our router, refer to the DHCP allocation table on your router management console to obtain the IP address of your Raspberry Pi.</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/0_1o7E-LY6B9Gg3_Qd.png" alt="" width="700"><figcaption>Source: <a href="https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0">Hacker Noon</a></figcaption></figure></div>
+<p>Once we have obtained the IP address, we can use any SSH client such as <a href="https://www.putty.org/">PuTTY</a> on Windows to access the Raspberry Pi. Linux and MacOS users can utilise SSH without any additional software.</p>
+<p>On Linux or MacOS, simply enter the following command with the &lt;IP&gt; for your device.</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<pre class="wp-block-code"><code>ssh pi@&lt;IP&gt;</code></pre>
+<div style="height:5px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>Once the connection is successful, we can simply use:</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<pre class="wp-block-code"><code>sudo raspi-config</code></pre>
+<div style="height:5px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>to configure our WiFi connection like we covered before!</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<h3><strong>Method 2: Enable Wifi via wpa_supplicant</strong></h3>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>This method involves replacing the <strong><em>wpa_supplicant.conf</em></strong> file on our Raspberry Pi to provide our WiFi configuration.</p>
+<p>First, you’ll want to create a <em><strong>wpa_supplicant.conf</strong></em> file with the following content. You can do this with any text editor.</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<pre class="wp-block-code"><code>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=&lt;Country Code&gt;
+
+network={
+     ssid="&lt;SSID&gt;"
+     psk="&lt;PASSWORD&gt;"
+     scan_ssid=1
+}</code></pre>
+<div style="height:5px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>Remember to replace <strong>&lt;Country Code&gt;</strong>, <strong>&lt;SSID&gt;</strong>, and <strong>&lt;PASSWORD&gt;</strong> with your own <a href="https://www.iban.com/country-codes">country code</a>, WiFi SSID and password.</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/Screenshot 2021-01-21 at 5.43.41 PM.png" alt="" width="600"></figure></div>
+<div style="height:5px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>Then, mount your SD card with Raspberry Pi OS onto your computer and copy the wpa_supplicant.conf file to the root of the /boot partition of your SD card. Similar to how we enabled SSH, the file will be used on boot to apply our new WiFi settings to our Raspberry Pi.</p>
+<p>Since we are going entirely headless, it can be difficult to troubleshoot this method of Wifi configuration. If it doesn’t work the first time, check and ensure that the name of your wpa_supplicant.conf file and its contents are correct before trying again.</p>
+<p>Once we successfully configure our WiFi connection using either method above, we can now use SSH over WiFi to interface with our Raspberry Pi’s command line!</p>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<hr class="wp-block-separator">
+<h2><strong>Test Your WiFi Connection</strong></h2>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<h3><strong>Check IP Address</strong></h3>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>To ensure that our WiFi connection has been established correctly, first unplug your ethernet cable. We can check our IP address through the command line with:</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<pre class="wp-block-code"><code>ifconfig wlan0</code></pre>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/ifconfig-wlan0.png" alt="" class="wp-image-41577" width="600" srcset="https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/ifconfig-wlan0.png 747w, https://www.seeedstudio.com/blog/wp-content/uploads/2021/03/ifconfig-wlan0-300x188.png 300w" sizes="(max-width: 747px) 100vw, 747px"></figure></div>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>Next to “inet”, we should see our IP address, which indicates a successful connection.</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<h3><strong>Ping a Website</strong></h3>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>Next, we can check if our WiFi connection successfully allows us to send and retrieve data to and from our favourite websites. Try <em>ping google.com</em> to see if you can reach it!</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<hr class="wp-block-separator">
+<h2><strong>Summary</strong></h2>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>We’ve shown you a number of ways that you can configure the WiFi on the Raspberry Pi!</p>
+<p>If you’re just getting started with your Pi, consider setting it up as a VPN server! Visit our blog to learn how to <a href="https://www.seeedstudio.com/blog/2020/07/02/set-up-a-raspberry-pi-vpn-server-using-pivpn-and-browse-securely-on-public-networks-m/">set up a Raspberry Pi VPN server using PiVPN and browse securely on public networks</a>.</p>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>The following articles from Seeed will also give you more knowledge and ideas on what to do:</p>
+<ul><li><a href="https://www.seeedstudio.com/blog/2020/06/03/learn-all-about-the-raspberry-pi/">Learn all about the Raspberry Pi: Getting started, Projects, Software, Tutorial</a></li><li><a href="https://www.seeedstudio.com/blog/2019/09/29/top-20-best-raspberry-pi-4-projects-that-you-must-try-now/">Top 35 Raspberry Pi 4 Projects That You Must Try Now</a></li><li><a href="https://www.seeedstudio.com/blog/2019/12/25/raspberry-pi-tutorials-guides-and-projects/">Raspberry Pi Tutorials – Guides and Projects</a></li></ul>
+<div style="height:15px" aria-hidden="true" class="wp-block-spacer"></div>
+<p>For more information and things you can do with Raspi-Config or SSH, try these articles from the Raspberry Pi foundation:</p>
+<ul><li><a href="https://www.raspberrypi.org/documentation/configuration/wireless/">Wireless Connectivity</a></li><li><a href="https://www.raspberrypi.org/documentation/configuration/raspi-config.md">Raspi-Config</a></li><li><a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">Remote Access with SSH</a></li></ul>
+<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
+<div class="sfsi_Sicons" style="width: 100%; display: inline-block; vertical-align: middle; text-align:left"><div style="margin:0px 8px 0px 0px; line-height: 24px"><span>Please follow and like us:</span></div><div class="sfsi_socialwpr"><div class="sf_subscrbe" style="text-align:left;vertical-align: middle;float:left;width:auto"><a href="http://www.specificfeeds.com/widgets/emailSubscribeEncFeed/TTlmd1VuNFVUSHhmTGJTdWwzUDR0eXh6TmFPQlZXUEwvWHNrbENTeUpJS1ZTUlpWaWpoc0hDMW9rVUJxQ0M1M2YxY1pWdU82SGpzRDdTbkJHakZSL2NuUG0rb05RRlpVQ0lyMUd4NFBxVG1GRStFOVVYZGlrbFljL3ZCVmJ3NGR8VFBmaWJiRjFIMlF0OXlYM0dFcTl0ci94NmwzOE9Nalh1amZKVkdwL1QvND0=/OA==" target="_blank"><img src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/follow_subscribe.png" alt="error"></a></div><div class="sf_fb" style="text-align:left;vertical-align: middle;"><div class="fb-like fb_iframe_widget" data-href="https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/" data-send="false" data-layout="button" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=75&amp;href=https%3A%2F%2Fwww.seeedstudio.com%2Fblog%2F2021%2F01%2F25%2Fthree-methods-to-configure-raspberry-pi-wifi%2F&amp;layout=button&amp;locale=en_US&amp;sdk=joey&amp;send=false"><span style="vertical-align: bottom; width: 60px; height: 28px;"><iframe name="f1350328dab3afc" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/like.html" style="border: none; visibility: visible; width: 60px; height: 28px;" class=""></iframe></span></div></div><div class="sf_fb_share" style="text-align:left;vertical-align: middle;"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.seeedstudio.com%2Fblog%2F2021%2F01%2F25%2Fthree-methods-to-configure-raspberry-pi-wifi%2F" style="display:inline-block;"> <img class="sfsi_wicon" data-pin-nopin="true" width="auto" height="auto" alt="fb-share-icon" title="Facebook Share" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/fbshare_bck.png"></a></div><div class="sf_twiter" style="display: inline-block;vertical-align: middle;width: auto;">
+<a href="https://twitter.com/intent/tweet?text=How+To+Configure+WiFi+on+Raspberry+Pi%3A+Step+By+Step+Tutorial%20https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/" style="display:inline-block">
+<img nopin="nopin" width="auto" class="sfsi_wicon" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/en_US_Tweet.svg" alt="Tweet" title="Tweet">
+</a>
+</div><div class="sf_pinit" style="text-align:left;vertical-align: middle;float:left;line-height: 20px;width:auto"><a href="https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/#" onclick="sfsi_pinterest_modal_images(event,&quot;https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/&quot;,&quot;How To Configure WiFi on Raspberry Pi: Step By Step Tutorial&quot;)" style="display:inline-block;"> <img class="sfsi_wicon" data-pin-nopin="true" width="auto" height="auto" alt="fb-share-icon" title="Pin Share" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/en_US_save.svg"></a></div></div></div> <div class="wp-post-author-wrap wp-post-author-shortcode left">
+<h3 class="awpa-title"></h3>
+<div class="wp-post-author">
+<div class="awpa-img awpa-author-block square">
+<a href="https://www.seeedstudio.com/blog/author/jonathan-tan/"><img alt="" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/d8dd1a4a7882386e8818e110c9322897.jpg" srcset="https://secure.gravatar.com/avatar/d8dd1a4a7882386e8818e110c9322897?s=300&amp;r=g 2x" class="avatar avatar-150 photo" height="150" width="150" loading="lazy"></a>
+</div>
+<div class="wp-post-author-meta awpa-author-block">
+<h4 class="awpa-display-name">
+<a href="https://www.seeedstudio.com/blog/author/jonathan-tan/">Jonathan Tan</a>
+</h4>
+<div class="wp-post-author-meta-bio">
+</div>
+<div class="wp-post-author-meta-more-posts">
+<p class="awpa-more-posts">
+<a href="https://www.seeedstudio.com/blog/author/jonathan-tan/" class="awpa-more-posts">See author's posts</a>
+</p>
+</div>
+<ul class="awpa-contact-info">
+</ul>
+</div>
+</div>
+</div>
+<div class="post-item-metadata entry-meta">
+<span class="tags-links">Tags: <a href="https://www.seeedstudio.com/blog/tag/configure-wifi-on-raspberry-pi/" rel="tag">configure wifi on raspberry pi</a>, <a href="https://www.seeedstudio.com/blog/tag/raspberry-pi-4/" rel="tag">Raspberry Pi 4</a>, <a href="https://www.seeedstudio.com/blog/tag/raspberry-pi-imager/" rel="tag">raspberry Pi imager</a>, <a href="https://www.seeedstudio.com/blog/tag/raspberry-pi-os/" rel="tag">Raspberry Pi OS</a>, <a href="https://www.seeedstudio.com/blog/tag/raspberry-pi-wifi/" rel="tag">Raspberry pi wifi</a>, <a href="https://www.seeedstudio.com/blog/tag/raspberry-pi-zero-wifi/" rel="tag">Raspberry Pi Zero Wifi</a>, <a href="https://www.seeedstudio.com/blog/tag/wifi/" rel="tag">wifi</a>, <a href="https://www.seeedstudio.com/blog/tag/wpa_supplicant/" rel="tag">wpa_supplicant</a></span> </div>
+<nav class="navigation post-navigation" role="navigation" aria-label="Continue Reading">
+<h2 class="screen-reader-text">Continue Reading</h2>
+<div class="nav-links"><div class="nav-previous"><a href="https://www.seeedstudio.com/blog/2021/01/22/how-to-run-cluster-management-software-k3s-on-nvidia-jetson/" rel="prev"><span class="em-post-navigation">Previous</span> How to run Cluster Management Software K3s on NVIDIA Jetson?</a></div><div class="nav-next"><a href="https://www.seeedstudio.com/blog/2021/01/25/programmable-io-with-raspberry-pi-pico/" rel="next"><span class="em-post-navigation">Next</span> Programmable I/O with Raspberry Pi Pico</a></div></div>
+</nav> </div>
+</div>
+</article>
+</main>
+</div>
+<aside id="secondary" class="widget-area">
+<div id="custom_html-2" class="widget_text widget magazine-7-widget widget_custom_html"><h2 class="widget-title widget-title-1"><span>Special Offer</span></h2><div class="textwidget custom-html-widget"><a href="https://www.seeedstudio.com/blog/2021/10/21/invigorate-your-inspiration-for-iot-with-lora-e5-and-free-seeed-fusion-pcba-prototypes/?utm_source=blog&amp;utm_medium=Banner&amp;utm_campaign=FREE+E5"><img src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/K517mU0.png" alt="Free Manufacturing for Lora E5 Design"></a></div></div><div id="mc4wp_form_widget-3" class="widget magazine-7-widget widget_mc4wp_form_widget"><h2 class="widget-title widget-title-1"><span>Subscribe for Updates</span></h2><script>(function() {
+	if ( ! window.mc4wp) {
+		window.mc4wp = {
+			listeners: [],
+			forms    : {
+				on: function (event, callback) {
+					window.mc4wp.listeners.push(
+						{
+							event   : event,
+							callback: callback
+						}
+					);
+				}
+			}
+		}
+	}
+})();
+</script><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-17737 mc4wp-form-theme mc4wp-form-theme-green" method="post" data-id="17737" data-name=""><div class="mc4wp-form-fields"><p></p><label>Email address: </label>
+<input type="email" name="EMAIL" placeholder="Your email address" required="">
+<p>
+<input type="submit" value="Subscribe now">
+</p>
+</div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off"></label><input type="hidden" name="_mc4wp_timestamp" value="1636034439"><input type="hidden" name="_mc4wp_form_id" value="17737"><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1"><div class="mc4wp-response"></div></form></div><div id="sfsi-widget-8" class="widget magazine-7-widget sfsi"> <div class="sfsi_widget" data-position="widget" style="display:flex;flex-wrap:wrap;justify-content: left">
+<div id="sfsi_wDiv"></div>
+<div class="norm_row sfsi_wDiv " style="width:225px;position:absolute;;text-align:left"><div style="width:40px; height:40px;margin-left:5px;margin-bottom:5px; " class="sfsi_wicons shuffeldiv "><div class="inerCnt"><a class=" sficn" data-effect="" target="_blank" href="https://www.linkedin.com/company/seeedstudio" id="sfsiid_linkedin" style="opacity:1"><img data-pin-nopin="true" alt="LinkedIn" title="LinkedIn" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/flat_linkedin.png" width="40" height="40" style="" class="sfcm sfsi_wicon " data-effect=""></a></div></div><div style="width:40px; height:40px;margin-left:5px;margin-bottom:5px; " class="sfsi_wicons shuffeldiv "><div class="inerCnt"><a class=" sficn" data-effect="" target="_blank" href="https://twitter.com/seeedstudio" id="sfsiid_twitter" style="opacity:1"><img data-pin-nopin="true" alt="Twitter" title="Twitter" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/flat_twitter.png" width="40" height="40" style="" class="sfcm sfsi_wicon " data-effect=""></a></div></div><div style="width:40px; height:40px;margin-left:5px;margin-bottom:5px; " class="sfsi_wicons shuffeldiv "><div class="inerCnt"><a class=" sficn" data-effect="" target="_blank" href="https://www.facebook.com/seeedstudiosz/" id="sfsiid_facebook" style="opacity:1"><img data-pin-nopin="true" alt="Facebook" title="Facebook" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/flat_facebook.png" width="40" height="40" style="" class="sfcm sfsi_wicon " data-effect=""></a></div></div><div style="width:40px; height:40px;margin-left:5px;margin-bottom:5px; " class="sfsi_wicons shuffeldiv "><div class="inerCnt"><a class=" sficn" data-effect="" target="_blank" href="https://www.youtube.com/channel/UC5mX-JaRWXc8cBc1gm5kKhg" id="sfsiid_youtube" style="opacity:1"><img data-pin-nopin="true" alt="" title="" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/flat_youtube.png" width="40" height="40" style="" class="sfcm sfsi_wicon " data-effect=""></a></div></div><div style="width:40px; height:40px;margin-left:5px;margin-bottom:5px; " class="sfsi_wicons shuffeldiv "><div class="inerCnt"><a class=" sficn" data-effect="" target="_blank" href="https://www.instagram.com/seeedstudio/" id="sfsiid_instagram" style="opacity:1"><img data-pin-nopin="true" alt="Instagram" title="Instagram" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/flat_instagram.png" width="40" height="40" style="" class="sfcm sfsi_wicon " data-effect=""></a></div></div></div><div id="sfsi_holder" class="sfsi_holders" style="position: relative; float: left; width: 100%; z-index: -1; height: 66px;"></div><script>window.addEventListener("sfsi_functions_loaded", function() 
+	{
+		if (typeof sfsi_widget_set == "function") {
+			sfsi_widget_set();
+		}
+	}); </script> <div style="clear: both;"></div>
+</div>
+</div>
+<div id="recent-posts-5" class="widget magazine-7-widget widget_recent_entries">
+<h2 class="widget-title widget-title-1"><span>Recent Posts</span></h2>
+<ul>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/04/iiot-solution-for-smart-agriculture-sensecap-lorawans-environmental-monitoring-for-sustainable-durian-farming-in-malaysia/">IIoT Solution for Smart Agriculture: SenseCAP LoRaWAN’s Environmental Monitoring for Sustainable Durian Farming in Malaysia</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/03/monthlywrap-up-october-aiot-lorawan-openwrt-ai-for-good-raspberry-pi-ml-zephyr-and-more/">#MonthlyWrap-up October: AIoT, LoRaWAN, OpenWrt, AI for Good, Raspberry Pi, ML, Zephyr, and More…</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/01/follow-up-eric-pans-speech-recap-on-decentralized-and-open-innovation-for-sdgs-at-un-itus-ai-for-good-event/">Follow-Up: Eric Pan’s Speech Recap on Decentralized and Open Innovation for SDGs at UN ITU’s “AI for Good” Event</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/01/resource-roundup-for-seeed-edu-courses-projects-and-documentation/">Resource Roundup for Seeed EDU: Courses, Projects and Documentation</a>
+</li>
+<li>
+ <a href="https://www.seeedstudio.com/blog/2021/10/29/bittle-now-supports-remote-control-using-mobile-apps/">Bittle now supports remote control using mobile apps!</a>
+</li>
+</ul>
+</div>
+<div id="recent-posts-3" class="widget magazine-7-widget widget_recent_entries">
+<h2 class="widget-title widget-title-1"><span>Latest Posts</span></h2>
+<ul>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/04/iiot-solution-for-smart-agriculture-sensecap-lorawans-environmental-monitoring-for-sustainable-durian-farming-in-malaysia/">IIoT Solution for Smart Agriculture: SenseCAP LoRaWAN’s Environmental Monitoring for Sustainable Durian Farming in Malaysia</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/03/monthlywrap-up-october-aiot-lorawan-openwrt-ai-for-good-raspberry-pi-ml-zephyr-and-more/">#MonthlyWrap-up October: AIoT, LoRaWAN, OpenWrt, AI for Good, Raspberry Pi, ML, Zephyr, and More…</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/01/follow-up-eric-pans-speech-recap-on-decentralized-and-open-innovation-for-sdgs-at-un-itus-ai-for-good-event/">Follow-Up: Eric Pan’s Speech Recap on Decentralized and Open Innovation for SDGs at UN ITU’s “AI for Good” Event</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/01/resource-roundup-for-seeed-edu-courses-projects-and-documentation/">Resource Roundup for Seeed EDU: Courses, Projects and Documentation</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/10/29/bittle-now-supports-remote-control-using-mobile-apps/">Bittle now supports remote control using mobile apps!</a>
+</li>
+</ul>
+</div><div id="tag_cloud-5" class="widget magazine-7-widget widget_tag_cloud"><h2 class="widget-title widget-title-1"><span>Tags</span></h2><div class="tagcloud"><a href="https://www.seeedstudio.com/blog/tag/ai/" class="tag-cloud-link tag-link-1301 tag-link-position-1" style="font-size: 10.93023255814pt;" aria-label="AI (29 items)">AI</a>
+<a href="https://www.seeedstudio.com/blog/tag/arduino/" class="tag-cloud-link tag-link-6 tag-link-position-2" style="font-size: 22pt;" aria-label="Arduino (144 items)">Arduino</a>
+<a href="https://www.seeedstudio.com/blog/tag/bazaar/" class="tag-cloud-link tag-link-162 tag-link-position-3" style="font-size: 8.3255813953488pt;" aria-label="bazaar (20 items)">bazaar</a>
+<a href="https://www.seeedstudio.com/blog/tag/community/" class="tag-cloud-link tag-link-632 tag-link-position-4" style="font-size: 16.139534883721pt;" aria-label="community (62 items)">community</a>
+<a href="https://www.seeedstudio.com/blog/tag/dso-nano/" class="tag-cloud-link tag-link-55 tag-link-position-5" style="font-size: 8pt;" aria-label="DSO nano (19 items)">DSO nano</a>
+<a href="https://www.seeedstudio.com/blog/tag/edge-computing/" class="tag-cloud-link tag-link-1302 tag-link-position-6" style="font-size: 12.395348837209pt;" aria-label="Edge Computing (36 items)">Edge Computing</a>
+<a href="https://www.seeedstudio.com/blog/tag/grove/" class="tag-cloud-link tag-link-139 tag-link-position-7" style="font-size: 21.511627906977pt;" aria-label="GROVE (133 items)">GROVE</a>
+<a href="https://www.seeedstudio.com/blog/tag/grove-sensor/" class="tag-cloud-link tag-link-733 tag-link-position-8" style="font-size: 9.7906976744186pt;" aria-label="Grove Sensor (25 items)">Grove Sensor</a>
+<a href="https://www.seeedstudio.com/blog/tag/iiot/" class="tag-cloud-link tag-link-3249 tag-link-position-9" style="font-size: 16.627906976744pt;" aria-label="IIoT (67 items)">IIoT</a>
+<a href="https://www.seeedstudio.com/blog/tag/industrial-iot/" class="tag-cloud-link tag-link-2104 tag-link-position-10" style="font-size: 14.023255813953pt;" aria-label="Industrial IoT (46 items)">Industrial IoT</a>
+<a href="https://www.seeedstudio.com/blog/tag/internet-of-things/" class="tag-cloud-link tag-link-305 tag-link-position-11" style="font-size: 13.209302325581pt;" aria-label="internet of things (41 items)">internet of things</a>
+<a href="https://www.seeedstudio.com/blog/tag/iot/" class="tag-cloud-link tag-link-304 tag-link-position-12" style="font-size: 20.53488372093pt;" aria-label="IoT (116 items)">IoT</a>
+<a href="https://www.seeedstudio.com/blog/tag/iot-solutions/" class="tag-cloud-link tag-link-912 tag-link-position-13" style="font-size: 14.186046511628pt;" aria-label="IoT Solutions (47 items)">IoT Solutions</a>
+<a href="https://www.seeedstudio.com/blog/tag/lora/" class="tag-cloud-link tag-link-726 tag-link-position-14" style="font-size: 13.53488372093pt;" aria-label="LoRa (43 items)">LoRa</a>
+<a href="https://www.seeedstudio.com/blog/tag/lorawan/" class="tag-cloud-link tag-link-2023 tag-link-position-15" style="font-size: 12.558139534884pt;" aria-label="Lorawan (37 items)">Lorawan</a>
+<a href="https://www.seeedstudio.com/blog/tag/lorawan-iot/" class="tag-cloud-link tag-link-3790 tag-link-position-16" style="font-size: 8.3255813953488pt;" aria-label="LoRaWAN IoT (20 items)">LoRaWAN IoT</a>
+<a href="https://www.seeedstudio.com/blog/tag/machine-learning/" class="tag-cloud-link tag-link-1608 tag-link-position-17" style="font-size: 12.395348837209pt;" aria-label="Machine Learning (36 items)">Machine Learning</a>
+<a href="https://www.seeedstudio.com/blog/tag/maker/" class="tag-cloud-link tag-link-260 tag-link-position-18" style="font-size: 13.53488372093pt;" aria-label="maker (43 items)">maker</a>
+<a href="https://www.seeedstudio.com/blog/tag/new-product/" class="tag-cloud-link tag-link-412 tag-link-position-19" style="font-size: 11.906976744186pt;" aria-label="new product (34 items)">new product</a>
+<a href="https://www.seeedstudio.com/blog/tag/npp/" class="tag-cloud-link tag-link-381 tag-link-position-20" style="font-size: 12.883720930233pt;" aria-label="NPP (39 items)">NPP</a>
+<a href="https://www.seeedstudio.com/blog/tag/nvidia-jetson-nano/" class="tag-cloud-link tag-link-1313 tag-link-position-21" style="font-size: 8.3255813953488pt;" aria-label="NVIDIA Jetson Nano (20 items)">NVIDIA Jetson Nano</a>
+<a href="https://www.seeedstudio.com/blog/tag/odyssey-x86j4105/" class="tag-cloud-link tag-link-2939 tag-link-position-22" style="font-size: 11.093023255814pt;" aria-label="ODYSSEY - X86J4105 (30 items)">ODYSSEY - X86J4105</a>
+<a href="https://www.seeedstudio.com/blog/tag/open-hardware/" class="tag-cloud-link tag-link-142 tag-link-position-23" style="font-size: 21.674418604651pt;" aria-label="open hardware (137 items)">open hardware</a>
+<a href="https://www.seeedstudio.com/blog/tag/open-source-hardware/" class="tag-cloud-link tag-link-75 tag-link-position-24" style="font-size: 10.93023255814pt;" aria-label="open source hardware (29 items)">open source hardware</a>
+<a href="https://www.seeedstudio.com/blog/tag/oscilloscope/" class="tag-cloud-link tag-link-53 tag-link-position-25" style="font-size: 9.3023255813953pt;" aria-label="oscilloscope (23 items)">oscilloscope</a>
+<a href="https://www.seeedstudio.com/blog/tag/pcb/" class="tag-cloud-link tag-link-4 tag-link-position-26" style="font-size: 21.348837209302pt;" aria-label="PCB (130 items)">PCB</a>
+<a href="https://www.seeedstudio.com/blog/tag/pcba-knowledge/" class="tag-cloud-link tag-link-3968 tag-link-position-27" style="font-size: 8.6511627906977pt;" aria-label="pcba knowledge (21 items)">pcba knowledge</a>
+<a href="https://www.seeedstudio.com/blog/tag/pcb-assembly/" class="tag-cloud-link tag-link-714 tag-link-position-28" style="font-size: 9.3023255813953pt;" aria-label="pcb assembly (23 items)">pcb assembly</a>
+<a href="https://www.seeedstudio.com/blog/tag/fusion/" class="tag-cloud-link tag-link-132 tag-link-position-29" style="font-size: 17.441860465116pt;" aria-label="PCB Manufacture and Assembly (75 items)">PCB Manufacture and Assembly</a>
+<a href="https://www.seeedstudio.com/blog/tag/project/" class="tag-cloud-link tag-link-731 tag-link-position-30" style="font-size: 9.6279069767442pt;" aria-label="Project (24 items)">Project</a>
+<a href="https://www.seeedstudio.com/blog/tag/rainbowduino/" class="tag-cloud-link tag-link-49 tag-link-position-31" style="font-size: 8.6511627906977pt;" aria-label="Rainbowduino (21 items)">Rainbowduino</a>
+<a href="https://www.seeedstudio.com/blog/tag/raspberry-pi/" class="tag-cloud-link tag-link-247 tag-link-position-32" style="font-size: 19.883720930233pt;" aria-label="Raspberry Pi (107 items)">Raspberry Pi</a>
+<a href="https://www.seeedstudio.com/blog/tag/raspberry-pi-4/" class="tag-cloud-link tag-link-1450 tag-link-position-33" style="font-size: 14.837209302326pt;" aria-label="Raspberry Pi 4 (52 items)">Raspberry Pi 4</a>
+<a href="https://www.seeedstudio.com/blog/tag/raspberry-pi-4-model-b/" class="tag-cloud-link tag-link-1451 tag-link-position-34" style="font-size: 8.3255813953488pt;" aria-label="Raspberry Pi 4 Model B (20 items)">Raspberry Pi 4 Model B</a>
+<a href="https://www.seeedstudio.com/blog/tag/sdg/" class="tag-cloud-link tag-link-1043 tag-link-position-35" style="font-size: 9.3023255813953pt;" aria-label="SDG (23 items)">SDG</a>
+<a href="https://www.seeedstudio.com/blog/tag/seeed-news/" class="tag-cloud-link tag-link-3700 tag-link-position-36" style="font-size: 11.581395348837pt;" aria-label="Seeed News (32 items)">Seeed News</a>
+<a href="https://www.seeedstudio.com/blog/tag/seeeduino/" class="tag-cloud-link tag-link-12 tag-link-position-37" style="font-size: 17.441860465116pt;" aria-label="seeeduino (75 items)">seeeduino</a>
+<a href="https://www.seeedstudio.com/blog/tag/seeeduino-xiao/" class="tag-cloud-link tag-link-2982 tag-link-position-38" style="font-size: 11.581395348837pt;" aria-label="Seeeduino XIAO (32 items)">Seeeduino XIAO</a>
+<a href="https://www.seeedstudio.com/blog/tag/sensecap/" class="tag-cloud-link tag-link-1258 tag-link-position-39" style="font-size: 15pt;" aria-label="SenseCAP (53 items)">SenseCAP</a>
+<a href="https://www.seeedstudio.com/blog/tag/sensor/" class="tag-cloud-link tag-link-10 tag-link-position-40" style="font-size: 11.418604651163pt;" aria-label="sensor (31 items)">sensor</a>
+<a href="https://www.seeedstudio.com/blog/tag/shield/" class="tag-cloud-link tag-link-93 tag-link-position-41" style="font-size: 10.441860465116pt;" aria-label="shield (27 items)">shield</a>
+<a href="https://www.seeedstudio.com/blog/tag/smart-agriculture/" class="tag-cloud-link tag-link-1395 tag-link-position-42" style="font-size: 12.395348837209pt;" aria-label="smart agriculture (36 items)">smart agriculture</a>
+<a href="https://www.seeedstudio.com/blog/tag/smart-farming/" class="tag-cloud-link tag-link-1456 tag-link-position-43" style="font-size: 11.744186046512pt;" aria-label="smart farming (33 items)">smart farming</a>
+<a href="https://www.seeedstudio.com/blog/tag/steam/" class="tag-cloud-link tag-link-795 tag-link-position-44" style="font-size: 8.3255813953488pt;" aria-label="STEAM (20 items)">STEAM</a>
+<a href="https://www.seeedstudio.com/blog/tag/wio-terminal/" class="tag-cloud-link tag-link-3003 tag-link-position-45" style="font-size: 17.116279069767pt;" aria-label="Wio terminal (72 items)">Wio terminal</a></div>
+</div></aside>
+</div>
+</div>
+</div>
+</div>
+<div id="sidr" class="primary-background sidr left" style="transition: left 0.2s ease 0s;">
+<a class="sidr-class-sidr-button-close" href="https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/#sidr-nav"><i class="far primary-footer fa-window-close"></i></a>
+<div id="calendar-5" class="widget magazine-7-widget widget_calendar"><h2 class="widget-title widget-title-1"><span>Calendar</span></h2><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar" class="wp-calendar-table">
+<caption>January 2021</caption>
+<thead>
+<tr>
+<th scope="col" title="Monday">M</th>
+<th scope="col" title="Tuesday">T</th>
+<th scope="col" title="Wednesday">W</th>
+<th scope="col" title="Thursday">T</th>
+<th scope="col" title="Friday">F</th>
+<th scope="col" title="Saturday">S</th>
+<th scope="col" title="Sunday">S</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="4" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td>
+</tr>
+<tr>
+<td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+</tr>
+<tr>
+<td>11</td><td>12</td><td><a href="https://www.seeedstudio.com/blog/2021/01/13/" aria-label="Posts published on January 13, 2021">13</a></td><td>14</td><td><a href="https://www.seeedstudio.com/blog/2021/01/15/" aria-label="Posts published on January 15, 2021">15</a></td><td>16</td><td>17</td>
+</tr>
+<tr>
+<td><a href="https://www.seeedstudio.com/blog/2021/01/18/" aria-label="Posts published on January 18, 2021">18</a></td><td><a href="https://www.seeedstudio.com/blog/2021/01/19/" aria-label="Posts published on January 19, 2021">19</a></td><td><a href="https://www.seeedstudio.com/blog/2021/01/20/" aria-label="Posts published on January 20, 2021">20</a></td><td><a href="https://www.seeedstudio.com/blog/2021/01/21/" aria-label="Posts published on January 21, 2021">21</a></td><td><a href="https://www.seeedstudio.com/blog/2021/01/22/" aria-label="Posts published on January 22, 2021">22</a></td><td>23</td><td>24</td>
+</tr>
+<tr>
+<td><a href="https://www.seeedstudio.com/blog/2021/01/25/" aria-label="Posts published on January 25, 2021">25</a></td><td><a href="https://www.seeedstudio.com/blog/2021/01/26/" aria-label="Posts published on January 26, 2021">26</a></td><td><a href="https://www.seeedstudio.com/blog/2021/01/27/" aria-label="Posts published on January 27, 2021">27</a></td><td><a href="https://www.seeedstudio.com/blog/2021/01/28/" aria-label="Posts published on January 28, 2021">28</a></td><td><a href="https://www.seeedstudio.com/blog/2021/01/29/" aria-label="Posts published on January 29, 2021">29</a></td><td>30</td><td>31</td>
+</tr>
+</tbody>
+</table><nav aria-label="Previous and next months" class="wp-calendar-nav">
+<span class="wp-calendar-nav-prev"><a href="https://www.seeedstudio.com/blog/2020/12/">« Dec</a></span>
+<span class="pad">&nbsp;</span>
+<span class="wp-calendar-nav-next"><a href="https://www.seeedstudio.com/blog/2021/02/">Feb »</a></span>
+</nav></div></div> </div>
+<footer class="site-footer">
+<div class="primary-footer">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="primary-footer-area footer-first-widgets-section col-md-4 col-sm-12">
+<section class="widget-area">
+<div id="tag_cloud-10" class="widget magazine-7-widget widget_tag_cloud"><h2 class="widget-title widget-title-1">Tags</h2><div class="tagcloud"><a href="https://www.seeedstudio.com/blog/tag/ai/" class="tag-cloud-link tag-link-1301 tag-link-position-1" style="font-size: 10.93023255814pt;" aria-label="AI (29 items)">AI<span class="tag-link-count"> (29)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/arduino/" class="tag-cloud-link tag-link-6 tag-link-position-2" style="font-size: 22pt;" aria-label="Arduino (144 items)">Arduino<span class="tag-link-count"> (144)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/bazaar/" class="tag-cloud-link tag-link-162 tag-link-position-3" style="font-size: 8.3255813953488pt;" aria-label="bazaar (20 items)">bazaar<span class="tag-link-count"> (20)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/community/" class="tag-cloud-link tag-link-632 tag-link-position-4" style="font-size: 16.139534883721pt;" aria-label="community (62 items)">community<span class="tag-link-count"> (62)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/dso-nano/" class="tag-cloud-link tag-link-55 tag-link-position-5" style="font-size: 8pt;" aria-label="DSO nano (19 items)">DSO nano<span class="tag-link-count"> (19)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/edge-computing/" class="tag-cloud-link tag-link-1302 tag-link-position-6" style="font-size: 12.395348837209pt;" aria-label="Edge Computing (36 items)">Edge Computing<span class="tag-link-count"> (36)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/grove/" class="tag-cloud-link tag-link-139 tag-link-position-7" style="font-size: 21.511627906977pt;" aria-label="GROVE (133 items)">GROVE<span class="tag-link-count"> (133)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/grove-sensor/" class="tag-cloud-link tag-link-733 tag-link-position-8" style="font-size: 9.7906976744186pt;" aria-label="Grove Sensor (25 items)">Grove Sensor<span class="tag-link-count"> (25)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/iiot/" class="tag-cloud-link tag-link-3249 tag-link-position-9" style="font-size: 16.627906976744pt;" aria-label="IIoT (67 items)">IIoT<span class="tag-link-count"> (67)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/industrial-iot/" class="tag-cloud-link tag-link-2104 tag-link-position-10" style="font-size: 14.023255813953pt;" aria-label="Industrial IoT (46 items)">Industrial IoT<span class="tag-link-count"> (46)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/internet-of-things/" class="tag-cloud-link tag-link-305 tag-link-position-11" style="font-size: 13.209302325581pt;" aria-label="internet of things (41 items)">internet of things<span class="tag-link-count"> (41)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/iot/" class="tag-cloud-link tag-link-304 tag-link-position-12" style="font-size: 20.53488372093pt;" aria-label="IoT (116 items)">IoT<span class="tag-link-count"> (116)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/iot-solutions/" class="tag-cloud-link tag-link-912 tag-link-position-13" style="font-size: 14.186046511628pt;" aria-label="IoT Solutions (47 items)">IoT Solutions<span class="tag-link-count"> (47)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/lora/" class="tag-cloud-link tag-link-726 tag-link-position-14" style="font-size: 13.53488372093pt;" aria-label="LoRa (43 items)">LoRa<span class="tag-link-count"> (43)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/lorawan/" class="tag-cloud-link tag-link-2023 tag-link-position-15" style="font-size: 12.558139534884pt;" aria-label="Lorawan (37 items)">Lorawan<span class="tag-link-count"> (37)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/lorawan-iot/" class="tag-cloud-link tag-link-3790 tag-link-position-16" style="font-size: 8.3255813953488pt;" aria-label="LoRaWAN IoT (20 items)">LoRaWAN IoT<span class="tag-link-count"> (20)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/machine-learning/" class="tag-cloud-link tag-link-1608 tag-link-position-17" style="font-size: 12.395348837209pt;" aria-label="Machine Learning (36 items)">Machine Learning<span class="tag-link-count"> (36)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/maker/" class="tag-cloud-link tag-link-260 tag-link-position-18" style="font-size: 13.53488372093pt;" aria-label="maker (43 items)">maker<span class="tag-link-count"> (43)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/new-product/" class="tag-cloud-link tag-link-412 tag-link-position-19" style="font-size: 11.906976744186pt;" aria-label="new product (34 items)">new product<span class="tag-link-count"> (34)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/npp/" class="tag-cloud-link tag-link-381 tag-link-position-20" style="font-size: 12.883720930233pt;" aria-label="NPP (39 items)">NPP<span class="tag-link-count"> (39)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/nvidia-jetson-nano/" class="tag-cloud-link tag-link-1313 tag-link-position-21" style="font-size: 8.3255813953488pt;" aria-label="NVIDIA Jetson Nano (20 items)">NVIDIA Jetson Nano<span class="tag-link-count"> (20)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/odyssey-x86j4105/" class="tag-cloud-link tag-link-2939 tag-link-position-22" style="font-size: 11.093023255814pt;" aria-label="ODYSSEY - X86J4105 (30 items)">ODYSSEY - X86J4105<span class="tag-link-count"> (30)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/open-hardware/" class="tag-cloud-link tag-link-142 tag-link-position-23" style="font-size: 21.674418604651pt;" aria-label="open hardware (137 items)">open hardware<span class="tag-link-count"> (137)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/open-source-hardware/" class="tag-cloud-link tag-link-75 tag-link-position-24" style="font-size: 10.93023255814pt;" aria-label="open source hardware (29 items)">open source hardware<span class="tag-link-count"> (29)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/oscilloscope/" class="tag-cloud-link tag-link-53 tag-link-position-25" style="font-size: 9.3023255813953pt;" aria-label="oscilloscope (23 items)">oscilloscope<span class="tag-link-count"> (23)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/pcb/" class="tag-cloud-link tag-link-4 tag-link-position-26" style="font-size: 21.348837209302pt;" aria-label="PCB (130 items)">PCB<span class="tag-link-count"> (130)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/pcba-knowledge/" class="tag-cloud-link tag-link-3968 tag-link-position-27" style="font-size: 8.6511627906977pt;" aria-label="pcba knowledge (21 items)">pcba knowledge<span class="tag-link-count"> (21)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/pcb-assembly/" class="tag-cloud-link tag-link-714 tag-link-position-28" style="font-size: 9.3023255813953pt;" aria-label="pcb assembly (23 items)">pcb assembly<span class="tag-link-count"> (23)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/fusion/" class="tag-cloud-link tag-link-132 tag-link-position-29" style="font-size: 17.441860465116pt;" aria-label="PCB Manufacture and Assembly (75 items)">PCB Manufacture and Assembly<span class="tag-link-count"> (75)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/project/" class="tag-cloud-link tag-link-731 tag-link-position-30" style="font-size: 9.6279069767442pt;" aria-label="Project (24 items)">Project<span class="tag-link-count"> (24)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/rainbowduino/" class="tag-cloud-link tag-link-49 tag-link-position-31" style="font-size: 8.6511627906977pt;" aria-label="Rainbowduino (21 items)">Rainbowduino<span class="tag-link-count"> (21)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/raspberry-pi/" class="tag-cloud-link tag-link-247 tag-link-position-32" style="font-size: 19.883720930233pt;" aria-label="Raspberry Pi (107 items)">Raspberry Pi<span class="tag-link-count"> (107)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/raspberry-pi-4/" class="tag-cloud-link tag-link-1450 tag-link-position-33" style="font-size: 14.837209302326pt;" aria-label="Raspberry Pi 4 (52 items)">Raspberry Pi 4<span class="tag-link-count"> (52)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/raspberry-pi-4-model-b/" class="tag-cloud-link tag-link-1451 tag-link-position-34" style="font-size: 8.3255813953488pt;" aria-label="Raspberry Pi 4 Model B (20 items)">Raspberry Pi 4 Model B<span class="tag-link-count"> (20)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/sdg/" class="tag-cloud-link tag-link-1043 tag-link-position-35" style="font-size: 9.3023255813953pt;" aria-label="SDG (23 items)">SDG<span class="tag-link-count"> (23)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/seeed-news/" class="tag-cloud-link tag-link-3700 tag-link-position-36" style="font-size: 11.581395348837pt;" aria-label="Seeed News (32 items)">Seeed News<span class="tag-link-count"> (32)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/seeeduino/" class="tag-cloud-link tag-link-12 tag-link-position-37" style="font-size: 17.441860465116pt;" aria-label="seeeduino (75 items)">seeeduino<span class="tag-link-count"> (75)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/seeeduino-xiao/" class="tag-cloud-link tag-link-2982 tag-link-position-38" style="font-size: 11.581395348837pt;" aria-label="Seeeduino XIAO (32 items)">Seeeduino XIAO<span class="tag-link-count"> (32)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/sensecap/" class="tag-cloud-link tag-link-1258 tag-link-position-39" style="font-size: 15pt;" aria-label="SenseCAP (53 items)">SenseCAP<span class="tag-link-count"> (53)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/sensor/" class="tag-cloud-link tag-link-10 tag-link-position-40" style="font-size: 11.418604651163pt;" aria-label="sensor (31 items)">sensor<span class="tag-link-count"> (31)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/shield/" class="tag-cloud-link tag-link-93 tag-link-position-41" style="font-size: 10.441860465116pt;" aria-label="shield (27 items)">shield<span class="tag-link-count"> (27)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/smart-agriculture/" class="tag-cloud-link tag-link-1395 tag-link-position-42" style="font-size: 12.395348837209pt;" aria-label="smart agriculture (36 items)">smart agriculture<span class="tag-link-count"> (36)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/smart-farming/" class="tag-cloud-link tag-link-1456 tag-link-position-43" style="font-size: 11.744186046512pt;" aria-label="smart farming (33 items)">smart farming<span class="tag-link-count"> (33)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/steam/" class="tag-cloud-link tag-link-795 tag-link-position-44" style="font-size: 8.3255813953488pt;" aria-label="STEAM (20 items)">STEAM<span class="tag-link-count"> (20)</span></a>
+<a href="https://www.seeedstudio.com/blog/tag/wio-terminal/" class="tag-cloud-link tag-link-3003 tag-link-position-45" style="font-size: 17.116279069767pt;" aria-label="Wio terminal (72 items)">Wio terminal<span class="tag-link-count"> (72)</span></a></div>
+</div> </section>
+</div>
+<div class="primary-footer-area footer-second-widgets-section col-md-4  col-sm-12">
+<section class="widget-area">
+<div id="categories-9" class="widget magazine-7-widget widget_categories"><h2 class="widget-title widget-title-1">Categories</h2><form action="https://www.seeedstudio.com/blog" method="get"><label class="screen-reader-text" for="cat">Categories</label><select name="cat" id="cat" class="postform">
+<option value="-1">Select Category</option>
+<option class="level-0" value="3301">5G</option>
+<option class="level-0" value="1311">AI</option>
+<option class="level-0" value="38">Announce</option>
+<option class="level-0" value="1205">Arduino</option>
+<option class="level-0" value="3735">badge</option>
+<option class="level-0" value="3135">Basic Electronics</option>
+<option class="level-0" value="687">Bazaar</option>
+<option class="level-0" value="735">BeagleBone Green</option>
+<option class="level-0" value="415">Beta</option>
+<option class="level-0" value="4016">Bittle</option>
+<option class="level-0" value="913">Community</option>
+<option class="level-0" value="517">Contest</option>
+<option class="level-0" value="3075">Covid-19</option>
+<option class="level-0" value="429">Designing &amp; Prototyping</option>
+<option class="level-0" value="443">DSO Instrumentality Project</option>
+<option class="level-0" value="404">DSO Quad Application Software Competition</option>
+<option class="level-0" value="525">FemaleMaker</option>
+<option class="level-0" value="398">First Impression</option>
+<option class="level-0" value="4085">Fusion</option>
+<option class="level-0" value="3437">Fusion News</option>
+<option class="level-0" value="407">Getting Started</option>
+<option class="level-0" value="383">Giveaway</option>
+<option class="level-0" value="4059">Global Community</option>
+<option class="level-0" value="432">Global Maker Tour</option>
+<option class="level-0" value="1436">Grove</option>
+<option class="level-0" value="720">Guide</option>
+<option class="level-0" value="317">Hackathons</option>
+<option class="level-0" value="417">Happy Birthday</option>
+<option class="level-0" value="433">High Tour Shenzhen</option>
+<option class="level-0" value="3332">Industrial IoT</option>
+<option class="level-0" value="295">Innovate With China</option>
+<option class="level-0" value="908">IoT Solutions</option>
+<option class="level-0" value="539">Kickstarter/Indiegogo</option>
+<option class="level-0" value="544">Labs</option>
+<option class="level-0" value="195">Letters</option>
+<option class="level-0" value="470">LinkIt ONE</option>
+<option class="level-0" value="721">List</option>
+<option class="level-0" value="365">Make it Wearable with Xadow</option>
+<option class="level-0" value="3134">Makecode</option>
+<option class="level-0" value="285">Maker Faire</option>
+<option class="level-0" value="536">MakerFaire</option>
+<option class="level-0" value="271">Makers</option>
+<option class="level-0" value="1252">Making at Seeed</option>
+<option class="level-0" value="2293">micro:bit</option>
+<option class="level-0" value="379">New Product</option>
+<option class="level-0" value="4057">New Products</option>
+<option class="level-0" value="1">News</option>
+<option class="level-0" value="3918">Newsletter</option>
+<option class="level-0" value="1822">NVIDIA® Jetson Nano™</option>
+<option class="level-0" value="3115">ODYSSEY – X86J4105</option>
+<option class="level-0" value="3018">Open Source Manufacturing</option>
+<option class="level-0" value="384">OpenSourceWatch</option>
+<option class="level-0" value="4066">OpenWrt</option>
+<option class="level-0" value="4054">Partnerships</option>
+<option class="level-0" value="860">PCB Assembly</option>
+<option class="level-0" value="647">PCB Design for Manufacture</option>
+<option class="level-0" value="1585">PCBA Case Studies</option>
+<option class="level-0" value="515">PebblePowerUP</option>
+<option class="level-0" value="67">Poll</option>
+<option class="level-0" value="3584">POWER-UP PCBA</option>
+<option class="level-0" value="3118">Press</option>
+<option class="level-0" value="563">Printed Circuit Board</option>
+<option class="level-0" value="1158">Product Review</option>
+<option class="level-0" value="41">Products</option>
+<option class="level-0" value="730">Project</option>
+<option class="level-0" value="403">Rainbowduino Carnival 2009</option>
+<option class="level-0" value="402">Rainbowduino Carnival 2010</option>
+<option class="level-0" value="718">Raspberry Pi</option>
+<option class="level-0" value="1215">Raspberry Pi 3 Model B+</option>
+<option class="level-0" value="488">Raspberry Pi Power-Up Guide</option>
+<option class="level-0" value="284">Recipe</option>
+<option class="level-0" value="535">RePhone</option>
+<option class="level-0" value="686">ReSpeaker</option>
+<option class="level-0" value="4046">reTerminal</option>
+<option class="level-0" value="3260">RISC-V</option>
+<option class="level-0" value="3157">SDG</option>
+<option class="level-0" value="4055">Seeed for SDGs</option>
+<option class="level-0" value="877">Seeed Fusion Gallery</option>
+<option class="level-0" value="1062">Seeed Fusion Service</option>
+<option class="level-0" value="3344">Seeed Rangers</option>
+<option class="level-0" value="526">SeeedRecipe</option>
+<option class="level-0" value="3380">seeeduino</option>
+<option class="level-0" value="3091">SenseCAP</option>
+<option class="level-0" value="719">Single Board Computer</option>
+<option class="level-0" value="527">Speech</option>
+<option class="level-0" value="3618">STEAM</option>
+<option class="level-0" value="3675">STEM</option>
+<option class="level-0" value="4053">Success Stories</option>
+<option class="level-0" value="4060">Technical Updates</option>
+<option class="level-0" value="389">Things We Make</option>
+<option class="level-0" value="388">Things We See</option>
+<option class="level-0" value="456">Thinking in Skeleton</option>
+<option class="level-0" value="4021">TinyML</option>
+<option class="level-0" value="375">Tips &amp; Tricks</option>
+<option class="level-0" value="302">Tools We Like</option>
+<option class="level-0" value="395">Topics</option>
+<option class="level-0" value="396">Toy Hacking Contest</option>
+<option class="level-0" value="393">Video</option>
+<option class="level-0" value="3061">Wio Terminal</option>
+<option class="level-0" value="924">Workshop</option>
+<option class="level-0" value="318">Workshops</option>
+<option class="level-0" value="457">Xadow Cookbook</option>
+</select>
+</form>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			dropdown.parentNode.submit();
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+</div>
+<div id="recent-posts-10" class="widget magazine-7-widget widget_recent_entries">
+<h2 class="widget-title widget-title-1">Recent Posts</h2>
+<ul>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/04/iiot-solution-for-smart-agriculture-sensecap-lorawans-environmental-monitoring-for-sustainable-durian-farming-in-malaysia/">IIoT Solution for Smart Agriculture: SenseCAP LoRaWAN’s Environmental Monitoring for Sustainable Durian Farming in Malaysia</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/03/monthlywrap-up-october-aiot-lorawan-openwrt-ai-for-good-raspberry-pi-ml-zephyr-and-more/">#MonthlyWrap-up October: AIoT, LoRaWAN, OpenWrt, AI for Good, Raspberry Pi, ML, Zephyr, and More…</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/01/follow-up-eric-pans-speech-recap-on-decentralized-and-open-innovation-for-sdgs-at-un-itus-ai-for-good-event/">Follow-Up: Eric Pan’s Speech Recap on Decentralized and Open Innovation for SDGs at UN ITU’s “AI for Good” Event</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/11/01/resource-roundup-for-seeed-edu-courses-projects-and-documentation/">Resource Roundup for Seeed EDU: Courses, Projects and Documentation</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/10/29/bittle-now-supports-remote-control-using-mobile-apps/">Bittle now supports remote control using mobile apps!</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/10/28/stanford-university-x-seeed-open-source-haptic-device-for-affordable-haptics-education-for-all/">Stanford University x Seeed: Open Source Haptic Device for Affordable Haptics Education for All</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/10/27/5-steps-to-add-a-lorawan-sensor-on-the-helium-console/">5 Steps to Connect LoRaWAN Sensor to Helium with Datacake Templates</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/10/26/sensecap-lorawan-innovation-for-sdgs-sweet-melons-grown-at-smart-agriculture-demonstration-park-in-beihai-china/">SenseCAP LoRaWAN Innovation for SDGs: Sweet Melons Grown at Smart Agriculture Demonstration Park in Beihai, China</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/10/22/how-to-start-learning-tinyml-with-wio-terminal/">How to Start Learning TinyML with Wio Terminal?</a>
+</li>
+<li>
+<a href="https://www.seeedstudio.com/blog/2021/10/21/snapeda-cad-models-from-seeed-fusion-opl/">POWER-UP PCBA #17: Access SnapEDA CAD Models from Seeed Fusion’s Open Parts Libraries Now</a>
+</li>
+</ul>
+</div> </section>
+</div>
+<div class="primary-footer-area footer-third-widgets-section col-md-4  col-sm-12">
+<section class="widget-area">
+<div id="mc4wp_form_widget-7" class="widget magazine-7-widget widget_mc4wp_form_widget"><h2 class="widget-title widget-title-1">Newsletter from Seeedstudio</h2><script>(function() {
+	if ( ! window.mc4wp) {
+		window.mc4wp = {
+			listeners: [],
+			forms    : {
+				on: function (event, callback) {
+					window.mc4wp.listeners.push(
+						{
+							event   : event,
+							callback: callback
+						}
+					);
+				}
+			}
+		}
+	}
+})();
+</script><form id="mc4wp-form-2" class="mc4wp-form mc4wp-form-17737 mc4wp-form-theme mc4wp-form-theme-green" method="post" data-id="17737" data-name=""><div class="mc4wp-form-fields"><p></p><label>Email address: </label>
+<input type="email" name="EMAIL" placeholder="Your email address" required="">
+<p>
+<input type="submit" value="Subscribe now">
+</p>
+</div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off"></label><input type="hidden" name="_mc4wp_timestamp" value="1636034439"><input type="hidden" name="_mc4wp_form_id" value="17737"><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-2"><div class="mc4wp-response"></div></form></div><div id="custom_html-7" class="widget_text widget magazine-7-widget widget_custom_html"><h2 class="widget-title widget-title-1">Seeed Fusion Open Parts Library for PCBA</h2><div class="textwidget custom-html-widget"><a href="https://www.seeedstudio.com/opl.html"><img src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/OPL-20000.png" alt="OPL 20000"></a></div></div><div id="sfsi-widget-9" class="widget magazine-7-widget sfsi"> <div class="sfsi_widget" data-position="widget" style="display:flex;flex-wrap:wrap;justify-content: left">
+<div id="sfsi_wDiv"></div>
+<div class="norm_row sfsi_wDiv " style="width:225px;position:absolute;;text-align:left"><div style="width:40px; height:40px;margin-left:5px;margin-bottom:5px; " class="sfsi_wicons shuffeldiv "><div class="inerCnt"><a class=" sficn" data-effect="" target="_blank" href="https://www.linkedin.com/company/seeedstudio" id="sfsiid_linkedin" style="opacity:1"><img data-pin-nopin="true" alt="LinkedIn" title="LinkedIn" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/flat_linkedin.png" width="40" height="40" style="" class="sfcm sfsi_wicon " data-effect=""></a></div></div><div style="width:40px; height:40px;margin-left:5px;margin-bottom:5px; " class="sfsi_wicons shuffeldiv "><div class="inerCnt"><a class=" sficn" data-effect="" target="_blank" href="https://twitter.com/seeedstudio" id="sfsiid_twitter" style="opacity:1"><img data-pin-nopin="true" alt="Twitter" title="Twitter" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/flat_twitter.png" width="40" height="40" style="" class="sfcm sfsi_wicon " data-effect=""></a></div></div><div style="width:40px; height:40px;margin-left:5px;margin-bottom:5px; " class="sfsi_wicons shuffeldiv "><div class="inerCnt"><a class=" sficn" data-effect="" target="_blank" href="https://www.facebook.com/seeedstudiosz/" id="sfsiid_facebook" style="opacity:1"><img data-pin-nopin="true" alt="Facebook" title="Facebook" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/flat_facebook.png" width="40" height="40" style="" class="sfcm sfsi_wicon " data-effect=""></a></div></div><div style="width:40px; height:40px;margin-left:5px;margin-bottom:5px; " class="sfsi_wicons shuffeldiv "><div class="inerCnt"><a class=" sficn" data-effect="" target="_blank" href="https://www.youtube.com/channel/UC5mX-JaRWXc8cBc1gm5kKhg" id="sfsiid_youtube" style="opacity:1"><img data-pin-nopin="true" alt="" title="" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/flat_youtube.png" width="40" height="40" style="" class="sfcm sfsi_wicon " data-effect=""></a></div></div><div style="width:40px; height:40px;margin-left:5px;margin-bottom:5px; " class="sfsi_wicons shuffeldiv "><div class="inerCnt"><a class=" sficn" data-effect="" target="_blank" href="https://www.instagram.com/seeedstudio/" id="sfsiid_instagram" style="opacity:1"><img data-pin-nopin="true" alt="Instagram" title="Instagram" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/flat_instagram.png" width="40" height="40" style="" class="sfcm sfsi_wicon " data-effect=""></a></div></div></div><div id="sfsi_holder" class="sfsi_holders" style="position: relative; float: left; width: 100%; z-index: -1; height: 66px;"></div><script>window.addEventListener("sfsi_functions_loaded", function() 
+	{
+		if (typeof sfsi_widget_set == "function") {
+			sfsi_widget_set();
+		}
+	}); </script> <div style="clear: both;"></div>
+</div>
+</div> </section>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="secondary-footer">
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+<div class="footer-nav-wrapper">
+<div class="footer-navigation"><ul id="footer-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48325"><a href="https://www.seeedstudio.com/blog/pa/">SERVICES</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48322"><a href="https://www.seeedstudio.com/blog/customization-service/">CUSTOMIZATION</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48323"><a href="https://www.seeedstudio.com/blog/manufacturing-service/">MANUFACTURING</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48324"><a href="https://www.seeedstudio.com/blog/distribution-service/">DISTRIBUTION</a></li>
+</ul></div> </div>
+</div>
+<div class="col-sm-6">
+<div class="footer-social-wrapper">
+<div class="social-navigation"><ul id="social-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48325"><a href="https://www.seeedstudio.com/blog/pa/"><span class="screen-reader-text">SERVICES</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48322"><a href="https://www.seeedstudio.com/blog/customization-service/"><span class="screen-reader-text">CUSTOMIZATION</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48323"><a href="https://www.seeedstudio.com/blog/manufacturing-service/"><span class="screen-reader-text">MANUFACTURING</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48324"><a href="https://www.seeedstudio.com/blog/distribution-service/"><span class="screen-reader-text">DISTRIBUTION</span></a></li>
+</ul></div> </div>
+</div>
+</div>
+</div>
+</div>
+<div class="site-info">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+Copyright © All rights reserved. <span class="sep"> | </span>
+<a href="https://afthemes.com/products/magazine-7/" target="_blank">Magazine 7</a> by AF themes. </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<a id="scroll-up" class="secondary-color" style="display: inline;">
+<i class="fa fa-angle-up"></i>
+</a>
+<script type="text/javascript">				
+				window.addEventListener('DOMContentLoaded', function () {
+					setTimeout(function(){
+						if( document.querySelectorAll('[name^=ct_checkjs]').length > 0 ) {
+			                apbct_public_sendAJAX(
+			                    { action: 'apbct_js_keys__get' },
+			                    { callback: apbct_js_keys__set_input_value, apbct_ajax: 1 }
+			                );
+			            }
+					},0);					    
+				});				
+			</script> 
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+<script>
+				(function(d, s, id) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) return;
+					js = d.createElement(s);
+					js.id = id;
+					js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script>
+<script>
+window.addEventListener('sfsi_functions_loaded', function() {
+    if (typeof sfsi_responsive_toggle == 'function') {
+        sfsi_responsive_toggle(0);
+        // console.log('sfsi_responsive_toggle');
+
+    }
+})
+</script>
+<script>
+        window.addEventListener('sfsi_functions_loaded', function() {
+            if (typeof sfsi_plugin_version == 'function') {
+                sfsi_plugin_version(2.49);
+            }
+        });
+
+        function sfsi_processfurther(ref) {
+
+            var feed_id = 'TTlmd1VuNFVUSHhmTGJTdWwzUDR0eXh6TmFPQlZXUEwvWHNrbENTeUpJS1ZTUlpWaWpoc0hDMW9rVUJxQ0M1M2YxY1pWdU82SGpzRDdTbkJHakZSL2NuUG0rb05RRlpVQ0lyMUd4NFBxVG1GRStFOVVYZGlrbFljL3ZCVmJ3NGR8VFBmaWJiRjFIMlF0OXlYM0dFcTl0ci94NmwzOE9Nalh1amZKVkdwL1QvND0=';
+            var feedtype = 8;
+
+            var email = jQuery(ref).find('input[name="data[Widget][email]"]').val();
+
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            if ((email != "Enter your email") && (filter.test(email))) {
+                if (feed_id != "") {
+
+                    if (feedtype == "8") {
+
+                        var url = "https://www.specificfeeds.com/widgets/subscribeWidget/" + feed_id + "/" + feedtype;
+
+                        window.open('', "popupwindow", "scrollbars=yes,width=1080,height=760");
+
+                        ref.action = url;
+
+                        ref.target = "popupwindow";
+
+                        return true;
+
+                    } else {
+
+                        return false
+
+                    }
+                }
+            } else {
+
+                alert("Please enter email address");
+
+                jQuery(ref).find('input[name="data[Widget][email]"]').focus();
+
+                return false;
+
+            }
+
+        }
+    </script>
+<style type="text/css" aria-selected="true">
+        .sfsi_subscribe_Popinner {
+
+            width: 100% !important;
+
+            height: auto !important;
+
+            padding: 18px 0px !important;
+
+            background-color: #ffffff !important;
+
+        }
+
+        .sfsi_subscribe_Popinner form {
+
+            margin: 0 20px !important;
+
+        }
+
+        .sfsi_subscribe_Popinner h5 {
+
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-weight: bold !important;
+
+            color: #000000 !important;
+
+            font-size: 16px !important;
+
+            text-align: center !important;
+
+            margin: 0 0 10px !important;
+
+            padding: 0 !important;
+
+        }
+
+        .sfsi_subscription_form_field {
+
+            margin: 5px 0 !important;
+
+            width: 100% !important;
+
+            display: inline-flex;
+
+            display: -webkit-inline-flex;
+
+        }
+
+        .sfsi_subscription_form_field input {
+
+            width: 100% !important;
+
+            padding: 10px 0px !important;
+
+        }
+
+        .sfsi_subscribe_Popinner input[type=email] {
+
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-style: normal !important;
+
+            color:  !important;
+
+            font-size: 14px !important;
+
+            text-align: center !important;
+
+        }
+
+        .sfsi_subscribe_Popinner input[type=email]::-webkit-input-placeholder {
+
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-style: normal !important;
+
+            color:  !important;
+
+            font-size: 14px !important;
+
+            text-align: center !important;
+
+        }
+
+        .sfsi_subscribe_Popinner input[type=email]:-moz-placeholder {
+            /* Firefox 18- */
+
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-style: normal !important;
+
+            color:  !important;
+
+            font-size: 14px !important;
+
+            text-align: center !important;
+
+        }
+
+        .sfsi_subscribe_Popinner input[type=email]::-moz-placeholder {
+            /* Firefox 19+ */
+
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-style: normal !important;
+
+            color:  !important;
+
+            font-size: 14px !important;
+
+            text-align: center !important;
+
+        }
+
+        .sfsi_subscribe_Popinner input[type=email]:-ms-input-placeholder {
+
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-style: normal !important;
+
+            color:  !important;
+
+            font-size: 14px !important;
+
+            text-align: center !important;
+
+        }
+
+        .sfsi_subscribe_Popinner input[type=submit] {
+
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-weight: bold !important;
+
+            color: #000000 !important;
+
+            font-size: 16px !important;
+
+            text-align: center !important;
+
+            background-color: #dedede !important;
+
+        }
+
+                .sfsi_shortcode_container {
+            float: left;
+        }
+
+        .sfsi_shortcode_container .norm_row .sfsi_wDiv {
+            position: relative !important;
+        }
+
+        .sfsi_shortcode_container .sfsi_holders {
+            display: none;
+        }
+
+            </style>
+<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+<script type="text/javascript">
+        function blockspareBlocksShare(url, title, w, h) {
+            var left = (window.innerWidth / 2) - (w / 2);
+            var top = (window.innerHeight / 2) - (h / 2);
+            return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=600, top=' + top + ', left=' + left);
+        }
+    </script>
+<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script><script>(function() {function addEventListener(element,event,handler) {
+	if (element.addEventListener) {
+		element.addEventListener( event,handler, false );
+	} else if (element.attachEvent) {
+		element.attachEvent( 'on' + event,handler );
+	}
+}
+function maybePrefixUrlField() {
+	if (this.value.trim() !== '' && this.value.indexOf( 'http' ) !== 0) {
+		this.value = "http://" + this.value;
+	}
+}
+
+var urlFields = document.querySelectorAll( '.mc4wp-form input[type="url"]' );
+if ( urlFields && urlFields.length > 0 ) {
+	for ( var j = 0; j < urlFields.length; j++ ) {
+		addEventListener( urlFields[j],'blur',maybePrefixUrlField );
+	}
+}
+/* test if browser supports date fields */
+var testInput = document.createElement( 'input' );
+testInput.setAttribute( 'type', 'date' );
+if ( testInput.type !== 'date') {
+
+	/* add placeholder & pattern to all date fields */
+	var dateFields = document.querySelectorAll( '.mc4wp-form input[type="date"]' );
+	for (var i = 0; i < dateFields.length; i++) {
+		if ( ! dateFields[i].placeholder) {
+			dateFields[i].placeholder = 'YYYY-MM-DD';
+		}
+		if ( ! dateFields[i].pattern) {
+			dateFields[i].pattern = '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';
+		}
+	}
+}
+})();</script><script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/slick.js.download" id="slick-js-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/imagesloaded.min.js.download" id="imagesloaded-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/masonry.min.js.download" id="masonry-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/jquery.masonry.min.js.download" id="jquery-masonry-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/frontend.js.download" id="blockspare-script-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/tabs.js.download" id="blockspare-tabs-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/core.min.js.download" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/modernizr.custom.min.js.download" id="SFSIjqueryModernizr-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/jquery.shuffle.min.js.download" id="SFSIjqueryShuffle-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/random-shuffle-min.js.download" id="SFSIjqueryrandom-shuffle-js"></script>
+<script type="text/javascript" id="SFSICustomJs-js-extra">
+/* <![CDATA[ */
+var sfsi_icon_ajax_object = {"ajax_url":"https:\/\/www.seeedstudio.com\/blog\/wp-admin\/admin-ajax.php"};
+var sfsi_icon_ajax_object = {"ajax_url":"https:\/\/www.seeedstudio.com\/blog\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/www.seeedstudio.com\/blog\/wp-content\/plugins\/ultimate-social-media-icons\/"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/custom.js.download" id="SFSICustomJs-js"></script>
+<script type="text/javascript" id="wp-polls-js-extra">
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"https:\/\/www.seeedstudio.com\/blog\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"1","show_fading":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/polls-js.js.download" id="wp-polls-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/navigation.js.download" id="magazine-7-navigation-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/skip-link-focus-fix.js.download" id="magazine-7-skip-link-focus-fix-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/slick.min.js.download" id="slick-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/bootstrap.min.js.download" id="bootstrap-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/jquery.sidr.min.js.download" id="sidr-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/jquery.magnific-popup.min.js.download" id="magnific-popup-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/jquery.matchHeight.min.js.download" id="matchheight-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/theia-sticky-sidebar.min.js.download" id="sticky-sidebar-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/script.js.download" id="magazine-7-script-js"></script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/wp-embed.min.js.download" id="wp-embed-js"></script>
+<script type="text/javascript" id="mc4wp-forms-api-js-extra">
+/* <![CDATA[ */
+var mc4wp_forms_config = [];
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/forms-api.min.js.download" id="mc4wp-forms-api-js"></script>
+<!--[if lte IE 9]>
+<script type='text/javascript' src='https://www.seeedstudio.com/blog/wp-content/plugins/mailchimp-for-wp/assets/js/third-party/placeholders.min.js?ver=4.7.4' id='mc4wp-forms-placeholders-js'></script>
+<![endif]-->
+<script defer="" src="./How To Configure WiFi on Raspberry Pi_ Step By Step Tutorial - Latest Open Tech From Seeed_files/beacon.min.js.download" data-cf-beacon="{&quot;rayId&quot;:&quot;6a8e5ea89b9bca78&quot;,&quot;token&quot;:&quot;7a671e3d307940439436301400817864&quot;,&quot;version&quot;:&quot;2021.10.0&quot;,&quot;si&quot;:100}"></script>
+
+
+</body></html>
